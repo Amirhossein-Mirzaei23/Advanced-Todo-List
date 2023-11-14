@@ -1,3 +1,119 @@
+////Add and make Catgory part (variable and function)
+let catgoriesDivElem=document.querySelector("#catgories")
+
+let addcatgoryElem=document.getElementById("addcatgoryIcon")
+
+let input=document.querySelector("input")
+
+let addLabel=document.querySelector("label")
+
+function newCatgory(){
+  let catgoryname=prompt("please enter the name of the catgory:",)
+  let catgoryElem=document.createElement("menu")
+  let catgoryTitle=document.createElement("span")
+  let ul= document.createElement('ul')
+
+  catgoryTitle.innerHTML=catgoryname
+
+  ul.id=catgoryname
+
+  catgoryElem.className="mt-1 text-center bg-indigo-600 rounded-3xl "
+  
+ 
+  catgoryElem.insertAdjacentElement("afterbegin",ul)
+  catgoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
+  catgoryElem.insertAdjacentHTML("afterbegin",`<button id="dropdownBtn" onclick="hideCatgoryItem(event)" class="float-right -translate-x-3">**</button>`)
+  catgoriesDivElem.insertAdjacentElement("beforeend",catgoryElem)
+}
+//////////
+
+function selectionsCatgory(e){
+
+  if(e.target.tagName=="MENU"){
+   // console.log(e.target.childNodes[0].id);
+let ulid=e.target.childNodes[2].id
+localStorage.setItem("key",`${ulid}`)
+console.log(e.target.childNodes[2].id);
+
+  }
+  
+}
+
+
+function addCatgoryWork(){
+  let ulid=localStorage.getItem("key")
+
+  let li=document.createElement("li")
+  li.className="mt-1 text-center bg-green-600 rounded-b-xl"
+  li.innerHTML=input.value
+  console.log(ulid);
+  let ul=document.getElementById(ulid)
+  ul.insertAdjacentElement("afterend",li)
+
+
+}
+function check(a){
+  return a>3
+}
+let dropdownBtn=document.getElementById("dropdownBtn")
+function hideCatgoryItem(e){
+
+  let ulid=e.target.parentElement.childNodes
+
+ for (const iterator of ulid) {
+
+  if(iterator.tagName =="LI" && !iterator.classList.contains("hidden") ){
+    iterator.classList.add("hidden")
+  }else{
+    if(iterator.tagName=="LI"){
+      iterator.classList.remove("hidden")
+    }
+  }
+   // console.log(iterator);
+   
+    
+  }
+ 
+
+
+}
+///
+addcatgoryElem.addEventListener("click",newCatgory)
+addLabel.addEventListener("click",addCatgoryWork)
+window.addEventListener("click",selectionsCatgory)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///play and load song (variable ,data and function)
+////calender and reminder
+///point hint and motivaion part
+
+
+
+
+
+
+
+
+
 /// variable
 ///music player
 ///catgory
@@ -61,3 +177,6 @@ let RGBColor=[
     "#f563e9bb",
     "#f5636abb"
 ]
+function addToCatogory(){
+
+}
