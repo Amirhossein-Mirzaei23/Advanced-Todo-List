@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>  
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Todo LList</title>
 </head>
 <body>
-    
+    <main class="container mt-3 pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-4/12 mx-auto ">
+        <ul><li class="text-center bg-indigo-300 rounded-3xl">Add a new work</li></ul>
+        <form class="add text-center flex-col items-center my-4" autocomplete="off" action=""> 
+              
+            <input type="text" class="form-control m-auto" name="add" placeholder="Right Here!" id="input"/>
+            
+            <div class="flex justify-center"><div class="flex translate-x-16  w-5/12 h-2 round-lg ">
+              <div id="div1" class="w-3/12 -z-10 rounded-s-lg"></div>
+              <div id="div2" class="w-3/12 -z-10 "></div>
+              <div id="div3" class="w-3/12 -z-10 rounded-e-lg"></div>
+            </div></Div>
+            <br/>
+            <label class="btn btn-danger text-light text-xs sm:text-sm lg:text-lg"  onclick="">
+              Add New Todo...
+          </label>
+        </form>
+    </main>
 </body>
 </html>
