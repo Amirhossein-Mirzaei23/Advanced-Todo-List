@@ -17,7 +17,7 @@ function newCatgory(){
 
   ul.id=catgoryname
 
-  catgoryElem.className="mt-1 text-center bg-indigo-600 rounded-3xl "
+  catgoryElem.className="mt-1 text-center bg-catgory-t1 rounded-3xl "
   
  
   catgoryElem.insertAdjacentElement("afterbegin",ul)
@@ -39,22 +39,30 @@ console.log(e.target.childNodes[2].id);
   
 }
 
+function deleteFromCatgory(e){
 
+  e.target.remove()
+
+  }
+  function jobIsDone(e){
+    e.target.classList.add("line-through")
+  }
 function addCatgoryWork(){
   let ulid=localStorage.getItem("key")
 
   let li=document.createElement("li")
-  li.className="mt-1 text-center bg-green-600 rounded-b-xl"
+  li.className="mt-1 text-center bg-li-t1 rounded-b-xl hover:translate-x-4 hover:scale-110 hover:capitalize transition-all"
   li.innerHTML=input.value
+  li.addEventListener("click",jobIsDone)
+  li.addEventListener("dblclick",deleteFromCatgory)
   console.log(ulid);
   let ul=document.getElementById(ulid)
   ul.insertAdjacentElement("afterend",li)
 
 
 }
-function check(a){
-  return a>3
-}
+
+
 let dropdownBtn=document.getElementById("dropdownBtn")
 function hideCatgoryItem(e){
 
