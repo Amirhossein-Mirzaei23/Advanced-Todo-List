@@ -22,15 +22,16 @@ function newCatgory(){
   
   catgoryElem.insertAdjacentElement("afterbegin",ul)
   catgoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
-  catgoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" " class="mt-px float-right -translate-x-3"><svg id="dropdowncategoryIcon" onclick="hideCatgoryItem(event)" class="svg-icon transition-all" style="width: 1.25em; height: 1.25em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg></div>`)
+  catgoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="mt-px float-right -translate-x-3"><svg id="svg${catgoryname}"  class="svg-icon transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg></div>`)
+ // catgoryElem.addEventListener("click",hideCatgoryItem)
   catgoriesDivElem.insertAdjacentElement("beforeend",catgoryElem)
 }
 //////////
 
 function selectionsCatgory(e){
 
-  if(e.target.tagName=="MENU"){
-   // console.log(e.target.childNodes[0].id);
+  if( e.target.tagName.toLowerCase() =="menu"){
+
 let ulid=e.target.childNodes[2].id
 localStorage.setItem("key",`${ulid}`)
 console.log(e.target.childNodes[2].id);
@@ -57,38 +58,50 @@ function addCatgoryWork(){
   li.addEventListener("dblclick",deleteFromCatgory)
   console.log(ulid);
   let ul=document.getElementById(ulid)
-  ul.insertAdjacentElement("afterend",li)
+  ul.insertAdjacentElement("afterbegin",li)
 
 
 }
 
 
 let dropdownBtn=document.getElementById("dropdownBtn")
+
 function hideCatgoryItem(e){
-  let svg=document.getElementById("dropdowncategoryIcon")
+  let id=localStorage.getItem("key")
+  let svg=e.target
+  let menu=e.target.parentElement.parentElement
+//console.log(e.target,svg);
+  
 
+  let ul=menu.childNodes[2]
 
-  let btn=e.target.parentElement
-
-  let ulid=btn.parentElement.childNodes
-
-
- for (const iterator of ulid) {
-  if(iterator.tagName =="LI" && !svg.classList.contains("rotate-180") ){
-    iterator.classList.remove("hidden")
+  
+  if(ul.classList.contains("hidden")){
+    ul.classList.remove("hidden")
+    svg.classList.remove("rotate-180")
   }else{
-    if(iterator.tagName=="LI"){
-      iterator.classList.remove("hidden")
-      iterator.classList.add("hidden")
-      svg.classList.remove("rotate-180")
-    }
-    if(!svg.classList.contains("rotate-180")){svg.classList.add("rotate-180")}
-    else{svg.classList.remove("rotate-180")}
-  }}
- 
-
-
+    ul.classList.add("hidden")
+    svg.classList.add("rotate-180")}
 }
+  
+  
+  //   else{svg.classList.remove("rotate-180")}
+
+ //for (const iterator of ulid) {
+ // if(iterator.tagName =="LI" && svg.classList.contains("rotate-180") ){
+ //   iterator.classList.remove("hidden")
+ //   console.log("am");
+ // }else{
+ //   if(iterator.tagName =="LI"){
+ //     iterator.classList.remove("hidden")
+ //     iterator.classList.add("hidden")
+ //     svg.classList.remove("rotate-180")
+ //   }
+ //  
+ // }}
+
+
+// if(!svg.classList.contains("rotate-180")){}
 ///
 addcatgoryElem.addEventListener("click",newCatgory)
 addLabel.addEventListener("click",addCatgoryWork)
