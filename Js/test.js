@@ -34,7 +34,6 @@ function newCatgory(){
   let catgoryElem=document.createElement("menu")
   let catgoryTitle=document.createElement("span")
   let ul= document.createElement('ul')
-  let dorpdownIcon=document.createElement("div")
 
   catgoryTitle.innerHTML=catgoryname
   ul.id=catgoryname
@@ -66,6 +65,7 @@ function selectionsCatgory(e){
   }
 /// add note to each category that selected by user
 function addCatgoryWork(){
+
   let categoryID=localStorage.getItem("key")
   let li=document.createElement("li")
   li.className="mt-1 text-center bg-li-t1 rounded-b-xl hover:translate-x-4 hover:scale-110 hover:capitalize transition-all"
@@ -78,13 +78,21 @@ function addCatgoryWork(){
   console.log(categoryID);
   let ul=document.getElementById(categoryID)
   ul.insertAdjacentElement("afterbegin",li)
-  //
+
 }
 /// delete the note from category
 function deleteFromCatgory(e){
   let liElem=e.target.parentElement.parentElement.parentElement.parentElement
-  liElem.remove()
+
+  if(liElem.tagName.toLowerCase()=="li"){
+    liElem.remove()
+  }if(liElem.tagName.toLowerCase()=="menu"){
+    liElem=e.target.parentElement.parentElement
+    liElem.remove()
   }
+}
+  
+
 // hide category item by click on the Icon
 function hideCatgoryItem(e){
   let id=localStorage.getItem("key")
