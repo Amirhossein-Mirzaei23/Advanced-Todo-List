@@ -28,21 +28,21 @@ removeLabel.addEventListener("mouseenter",setLabelIcon)
 addLabel.addEventListener("mouseleave",setLabelText)
 removeLabel.addEventListener("mouseleave",setLabelText)
 
-// create a new category
+// create and add new category
 function newCatgory(){
   let catgoryname=prompt("please enter the name of the catgory:",)
   let catgoryElem=document.createElement("menu")
   let catgoryTitle=document.createElement("span")
   let ul= document.createElement('ul')
+  let randomNumber=Math.floor(Math.random()*100)
 
   catgoryTitle.innerHTML=catgoryname
-  ul.id=catgoryname
+  ul.id=JSON.stringify(catgoryname+randomNumber)
   catgoryElem.className="mt-1 text-center bg-catgory-t1 rounded-3xl "
 
   catgoryElem.insertAdjacentElement("afterbegin",ul)
   catgoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
   catgoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="mt-px float-right -translate-x-3"><svg id="svg${catgoryname}"  class="svg-icon transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg></div>`)
-
   catgoriesDivElem.insertAdjacentElement("beforeend",catgoryElem)
 
 }
@@ -52,8 +52,8 @@ function selectionsCatgory(e){
 
   if( e.target.tagName.toLowerCase() =="menu"){
 
-         let ulid=e.target.childNodes[2].id
-         localStorage.setItem("key",`${ulid}`)
+         let categoryID=e.target.childNodes[2].id
+         localStorage.setItem("key",`${categoryID}`)
          console.log(e.target.childNodes[2].id);
   }
 }
