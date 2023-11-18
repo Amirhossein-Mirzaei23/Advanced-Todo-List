@@ -49,7 +49,7 @@ function deleteFromCatgory(e){
 /// add note to each category that selected by user
 function addCatgoryWork(){
   let note="for add a new note to every category plz select your category at the first step"
-  alert(note.toUpperCase() )
+ // alert(note.toUpperCase() )
   let categoryID=localStorage.getItem("key")
   let li=document.createElement("li")
   li.className="mt-1 text-center bg-li-t1 rounded-b-xl hover:translate-x-4 hover:scale-110 hover:capitalize transition-all"
@@ -60,8 +60,8 @@ function addCatgoryWork(){
   let ul=document.getElementById(categoryID)
   ul.insertAdjacentElement("afterbegin",li)
   //
-  alert("by single Double click on each item ,item will be deleted")
-  alert("when your job is done you could have a single click on your job ")
+ // alert("by single Double click on each item ,item will be deleted")
+ // alert("when your job is done you could have a single click on your job ")
 }
 //let dropdownBtn=document.getElementById("dropdownBtn")
 // hide category item by click on the Icon
