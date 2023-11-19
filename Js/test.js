@@ -31,35 +31,26 @@ removeLabel.addEventListener("mouseleave",setLabelText)
 // create and add new category
 function newCatgory(){
   let catgoryname=prompt("please enter the name of the catgory:",)
-  let categoryPromise=new Promise((resolve,reject)=>{
+
     if(catgoryname){
-      resolve()
+    
+      let catgoryElem=document.createElement("menu")
+      let catgoryTitle=document.createElement("span")
+      let ul= document.createElement('ul')
+      let randomNumber=Math.floor(Math.random()*100)
+    
+      catgoryTitle.innerHTML=catgoryname
+      ul.id=JSON.stringify(catgoryname+randomNumber)
+      catgoryElem.className="mt-1 text-center bg-catgory-t1 rounded-3xl "
+    
+      catgoryElem.insertAdjacentElement("afterbegin",ul)
+      catgoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
+      catgoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="mt-px float-right -translate-x-3"><svg id="svg${catgoryname}"  class="svg-icon transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg></div>`)
+      catgoriesDivElem.insertAdjacentElement("beforeend",catgoryElem)
+   
     }else{
-      reject()
+      alert("pealse enter category name")
     }
-  })
-
-  categoryPromise.then(()=>{
-    let catgoryElem=document.createElement("menu")
-    let catgoryTitle=document.createElement("span")
-    let ul= document.createElement('ul')
-    let randomNumber=Math.floor(Math.random()*100)
-  
-    catgoryTitle.innerHTML=catgoryname
-    ul.id=JSON.stringify(catgoryname+randomNumber)
-    catgoryElem.className="mt-1 text-center bg-catgory-t1 rounded-3xl "
-  
-    catgoryElem.insertAdjacentElement("afterbegin",ul)
-    catgoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
-    catgoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="mt-px float-right -translate-x-3"><svg id="svg${catgoryname}"  class="svg-icon transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg></div>`)
-    catgoriesDivElem.insertAdjacentElement("beforeend",catgoryElem)
-  })
-  .catch(()=>{
-    alert("plz enter category name")
-  })
-
-
-
 }
 
 ////////// category selection to add note
@@ -83,32 +74,23 @@ function selectionsCatgory(e){
 /// add note to each category that selected by user
 function addCatgoryWork(){
   let notevalue=input.value
-  let notePromise= new Promise((resolve,reject)=>{
     if(notevalue){
-      resolve()
+      let categoryID=localStorage.getItem("key")
+      let li=document.createElement("li")
+      li.className="mt-1 text-center decoration-double decoration-stone-200 decoration-2 font-serif bg-li-t1 rounded-b-xl hover:opacity-80 hover:-translate-x-5 hover:scale-110 hover:capitalize transition-all"
+      li.innerHTML=notevalue
+      li.insertAdjacentHTML("beforeend",`<button id="ulReycleBin" class="my-2 m-2 hover:scale-125 float-right" onclick="deleteFromCatgory(event)">
+      <?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" viewBox="0 0 109.484 122.88" enable-background="new 0 0 109.484 122.88" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M2.347,9.633h38.297V3.76c0-2.068,1.689-3.76,3.76-3.76h21.144 c2.07,0,3.76,1.691,3.76,3.76v5.874h37.83c1.293,0,2.347,1.057,2.347,2.349v11.514H0V11.982C0,10.69,1.055,9.633,2.347,9.633 L2.347,9.633z M8.69,29.605h92.921c1.937,0,3.696,1.599,3.521,3.524l-7.864,86.229c-0.174,1.926-1.59,3.521-3.523,3.521h-77.3 c-1.934,0-3.352-1.592-3.524-3.521L5.166,33.129C4.994,31.197,6.751,29.605,8.69,29.605L8.69,29.605z M69.077,42.998h9.866v65.314 h-9.866V42.998L69.077,42.998z M30.072,42.998h9.867v65.314h-9.867V42.998L30.072,42.998z M49.572,42.998h9.869v65.314h-9.869 V42.998L49.572,42.998z"/></g></svg>
+      </button>`)
+      li.addEventListener("click",jobIsDone)
+    
+      console.log(categoryID);
+      let ul=document.getElementById(categoryID)
+      ul.insertAdjacentElement("afterbegin",li)
+      input.value=""
     }else{
-      reject()
-    }
-  })
-  notePromise.then(()=>{
-    let categoryID=localStorage.getItem("key")
-    let li=document.createElement("li")
-    li.className="mt-1 text-center decoration-double decoration-stone-200 decoration-2 font-serif bg-li-t1 rounded-b-xl hover:opacity-80 hover:-translate-x-5 hover:scale-110 hover:capitalize transition-all"
-    li.innerHTML=notevalue
-    li.insertAdjacentHTML("beforeend",`<button id="ulReycleBin" class="my-2 m-2 hover:scale-125 float-right" onclick="deleteFromCatgory(event)">
-    <?xml version="1.0" encoding="utf-8"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" viewBox="0 0 109.484 122.88" enable-background="new 0 0 109.484 122.88" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M2.347,9.633h38.297V3.76c0-2.068,1.689-3.76,3.76-3.76h21.144 c2.07,0,3.76,1.691,3.76,3.76v5.874h37.83c1.293,0,2.347,1.057,2.347,2.349v11.514H0V11.982C0,10.69,1.055,9.633,2.347,9.633 L2.347,9.633z M8.69,29.605h92.921c1.937,0,3.696,1.599,3.521,3.524l-7.864,86.229c-0.174,1.926-1.59,3.521-3.523,3.521h-77.3 c-1.934,0-3.352-1.592-3.524-3.521L5.166,33.129C4.994,31.197,6.751,29.605,8.69,29.605L8.69,29.605z M69.077,42.998h9.866v65.314 h-9.866V42.998L69.077,42.998z M30.072,42.998h9.867v65.314h-9.867V42.998L30.072,42.998z M49.572,42.998h9.869v65.314h-9.869 V42.998L49.572,42.998z"/></g></svg>
-    </button>`)
-    li.addEventListener("click",jobIsDone)
-  
-    console.log(categoryID);
-    let ul=document.getElementById(categoryID)
-    ul.insertAdjacentElement("afterbegin",li)
-    input.value=""
-  }).catch(()=>{
-    alert(`Eror 
-             plz enter your note or select your category `)
-  })
-
+      alert(`Eror 
+      plz enter your note or select your category `)}
 }
 /// delete the note from category
 function deleteFromCatgory(e){
