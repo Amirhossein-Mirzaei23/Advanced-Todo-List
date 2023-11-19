@@ -78,7 +78,7 @@ function addCatgoryWork(){
   console.log(categoryID);
   let ul=document.getElementById(categoryID)
   ul.insertAdjacentElement("afterbegin",li)
-
+  input.value=""
 }
 /// delete the note from category
 function deleteFromCatgory(e){
@@ -90,6 +90,8 @@ function deleteFromCatgory(e){
     liElem=e.target.parentElement.parentElement
     liElem.remove()
   }
+
+  
 }
   
 
