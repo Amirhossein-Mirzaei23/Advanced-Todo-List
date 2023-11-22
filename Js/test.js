@@ -128,7 +128,57 @@ addcategoryElem.addEventListener("click",newCatgory)
 addLabel.addEventListener("click",addCatgoryWork)
 window.addEventListener("click",selectionsCatgory)
 
+////RGB Item Part
+const RGBElem1=document.getElementById("RGBdiv1")
+const RGBElem2=document.getElementById("RGBdiv2")
+const RGBElem3=document.getElementById("RGBdiv3")
 
+let RGBColor=[
+  "#f5636399",
+  "#f5946399",
+  "#f5bd6399",
+  "eef56399",
+  "#9df563bb",
+  "#63f585bb",
+  "#63f5c0bb",
+  "#63e6f5bb",
+  "#63acf5bb",
+  "#6379f5bb",
+  "#8863f5bb",
+  "#c763f5bb",
+  "#f563e9bb",
+  "#f5636abb"
+]
+
+////set RGB color control
+let index=0
+setTimeout(() => {
+    setInterval(()=>{
+        changeColor(RGBElem1)
+    },700)
+
+}, 100);
+setTimeout(() => {
+    setInterval(()=>{
+        changeColor(RGBElem2)
+    },700)
+
+}, 300);
+setTimeout(() => {
+    setInterval(()=>{
+        changeColor(RGBElem3)
+    },700)
+
+}, 500);
+
+
+function changeColor(item){
+    item.style.backgroundColor=RGBColor[index]
+index++
+if(index>RGBColor.length){
+    index=0
+}
+}
 ////////////////////play and load song (variable ,data and function)
 // code will add in the futur
 
