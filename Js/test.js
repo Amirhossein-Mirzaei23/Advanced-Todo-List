@@ -23,11 +23,17 @@ function setLabelText(e){
 if(targetLabel.id=="addlabel"){addLabel.innerHTML="";addLabel.classList.add("btn-danger");addLabel.innerHTML="Add New Todo..." }
 if(targetLabel.id=="removelabel"){removeLabel.innerHTML="";removeLabel.classList.add("btn-danger"); removeLabel.innerHTML="Drag Here"; }
 }
-addLabel.addEventListener("mouseenter",setLabelIcon)
+
+function checkScreenWidth(){
+  if(window.screen.width>680){
+    addLabel.addEventListener("mouseenter",setLabelIcon)
 removeLabel.addEventListener("mouseenter",setLabelIcon)
 addLabel.addEventListener("mouseleave",setLabelText)
 removeLabel.addEventListener("mouseleave",setLabelText)
-
+  }else{
+    console.log(window.screen.width);
+    
+  }}
 // create and add new category
 function newCatgory(){
   let catgoryname=prompt("please enter the name of the catgory:",)
@@ -179,6 +185,9 @@ if(index>RGBColor.length){
     index=0
 }
 }
+
+window.addEventListener("change",checkScreenWidth)
+
 ////////////////////play and load song (variable ,data and function)
 // code will add in the futur
 
