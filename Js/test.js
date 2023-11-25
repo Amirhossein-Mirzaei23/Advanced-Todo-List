@@ -54,7 +54,7 @@ function newCatgory(){
       categoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
       categoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="mt-px float-right -translate-x-3">${dropDownSvg}</div>`)
       categoriesDivElem.insertAdjacentElement("beforeend",categoryElem)
-   
+      localStorage.setItem("key",`${ul.id}`)
     }else{
       alert("pealse enter category name")
     }
@@ -95,6 +95,7 @@ function addCatgoryWork(){
       let ul=document.getElementById(categoryID)
       ul.insertAdjacentElement("afterbegin",li)
       input.value=""
+      
     }else{
       alert(`Eror 
       plz enter your note or select your category `)}
