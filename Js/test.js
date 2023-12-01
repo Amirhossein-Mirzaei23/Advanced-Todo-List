@@ -76,8 +76,12 @@ function selectionsCatgory(e){
 
 /// take a line over of the note ,, job is done
   function jobIsDone(e){
+   let target=e.target
+  if (target.classList.contains("line-through")) {
+    e.target.classList.remove("line-through")
+  }else{
     e.target.classList.add("line-through")
-  
+  }
     
   }
 /// add note to each category that selected by user
@@ -439,6 +443,25 @@ loadSong(songs[songIndex]);
       console.log(audioBtn.pause)
       })
 
+
+      ///custon scroll bar
+      let list=document.getElementById("music-list")
+      let scrollDiv=document.getElementById("scroll")
+
+list.addEventListener("scroll",function (){
+  
+    let windowScroll=window.scrollY
+  
+   let windowclientHeaght=list.scrollHeight
+  
+   let windowInnerheight=list.clientHeight
+
+   let scrollPercent=windowScroll/(windowclientHeaght-windowInnerheight)
+   
+   scrollDiv.style.width=(scrollPercent*100)+'%'
+   scrollDiv.style.height="10px"
+   console.log(scrollPercent,"/",windowInnerheight,windowclientHeaght)
+})
 ////////////////////calender and reminder part
 //code will add in the future
 
