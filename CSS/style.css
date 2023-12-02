@@ -14,3 +14,22 @@ background-color: #4D4C7d;
 .bg-li-t1{
 background-color: #F99417;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(22, 18, 18);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a11f1f;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
