@@ -359,6 +359,14 @@ let audio=document.querySelector("audio")
 let isPlaying=false
 
 let songIndex=0;
+
+const selectplaylistbox=document.getElementById("selectplaylistbox")
+const rockPlaylistIcon=document.getElementById("rockPlaylistIcon")
+const popPlaylistIcon=document.getElementById("popPlaylistIcon")
+const rapPlaylistIcon=document.getElementById("rapPlaylistIcon")
+const housePlaylistIcon=document.getElementById("housePlaylistIcon")
+const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
+const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 ///// function
 // Previous Song
 function loadSong(song) {
