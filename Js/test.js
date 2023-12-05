@@ -195,8 +195,8 @@ if(index>RGBColor.length){
 
 
 
-////////////////////play and load song (variable ,data and function)
-// code will add in the futur
+//////////////////////////////////////////play and load song (variable ,data and function)
+//////////////////////////////////////////// 
 let musiclist=document.getElementById("musiclist")
 const songs = [
   {
@@ -283,11 +283,11 @@ this.artist=artist
 //this.time=time
 
 }
-function limaker(name,artist,time){
-
-let li=document.createElement("li")
-
-}
+//function limaker(name,artist,time){
+//
+//let li=document.createElement("li")
+//
+//}
 songs.forEach(object=>{
 
   musiclist.insertAdjacentHTML("beforeend",` <li id=${object.id} class="mt-1 w-full h-10 bg-orange-400  grid grid-cols-2 px-2 rounded-xl hover:scale-105 hover:-py-1">
@@ -360,27 +360,36 @@ let isPlaying=false
 
 let songIndex=0;
 
-const selectplaylistbox=document.getElementById("selectplaylistbox")
+const selectPlayListBox=document.getElementById("selectplaylistbox")
 const rockPlaylistIcon=document.getElementById("rockPlaylistIcon")
 const popPlaylistIcon=document.getElementById("popPlaylistIcon")
 const rapPlaylistIcon=document.getElementById("rapPlaylistIcon")
 const housePlaylistIcon=document.getElementById("housePlaylistIcon")
 const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
 const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
+/////  add html element of music part
+selectPlayListBox.insertAdjacentHTML("afterbegin",` <div id="rockPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Rock</div></div>
+<div id="popPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all"><?xml version="1.0" ?><svg id="rockPlaylistSvg class="hidden mx-auto w-4/12 hover:scale-125 hover:-rotate-12 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g id="_x30_1_x2C__Love_Song_x2C__Song_x2C__Love_x2C__Music_and_Multimedia_x2C__Cd"><g><path d="M423.871,101.962c4.295-4.295,9.028-9.028,14.278-14.278c9.587-9.595,14.867-22.347,14.867-35.905    C453.016,23.713,430.303,1,402.241,1c-10.452,0-20.423,3.137-28.835,8.965c-28.912-20.022-71.519-5.386-78.762,32.789    C154.778,25.608,30.986,134.534,30.986,276c0,31.107,5.927,61.127,17.623,89.44c-8.297,2.214-16.173,6.571-22.753,13.151    c-19.79,19.798-19.79,52.014,0.001,71.814l57.666,57.667c3.905,3.905,10.238,3.905,14.143,0    c7.396-7.396-10.198,10.198,37.097-37.097C173.595,497.185,218.777,511,265.986,511c129.874,0,235-105.11,235-235    C500.986,209.339,473.005,146.526,423.871,101.962z M265.986,491c-41.88,0-82.011-11.882-116.79-34.459    c1.969-1.969,4.009-4.009,6.14-6.14c19.846-19.863,19.829-51.963-0.003-71.813c-17.583-17.582-44.959-19.551-64.731-5.901    c-6.262-4.338-13.342-7.113-20.66-8.302C57.365,336.588,50.986,306.884,50.986,276c0-129.909,114.977-230.541,243.921-213.061    c1.946,8.814,6.394,17.376,13.763,24.749l57.667,57.667c3.905,3.905,10.238,3.905,14.143,0c6.949-6.949-8.151,8.151,29.231-29.231    c45.401,40.814,71.276,98.566,71.276,159.877C480.986,394.551,384.537,491,265.986,491z"/><path d="M355.986,276c0-49.626-40.374-90-90-90s-90,40.374-90,90s40.374,90,90,90S355.986,325.626,355.986,276z M195.986,276    c0-38.598,31.402-70,70-70s70,31.402,70,70s-31.402,70-70,70S195.986,314.598,195.986,276z"/><path d="M301.542,276c0-19.605-15.95-35.556-35.556-35.556S230.43,256.395,230.43,276s15.95,35.556,35.556,35.556    S301.542,295.605,301.542,276z M250.43,276c0-8.578,6.978-15.556,15.556-15.556s15.556,6.978,15.556,15.556    s-6.978,15.556-15.556,15.556S250.43,284.578,250.43,276z"/><path d="M275.986,128c0-5.523-4.477-10-10-10c-87.122,0-158,70.878-158,158c0,5.523,4.477,10,10,10s10-4.477,10-10    c0-76.093,61.907-138,138-138C271.509,138,275.986,133.523,275.986,128z"/><path d="M413.986,266c-5.523,0-10,4.477-10,10c0,76.093-61.907,138-138,138c-5.523,0-10,4.477-10,10s4.477,10,10,10    c87.122,0,158-70.878,158-158C423.986,270.477,419.509,266,413.986,266z"/></g></g><g id="Layer_1"/></svg>Pop</div></div>
+<div id="rapPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Rap</div></div>
+<div id="housePlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">house</div></div>
+<div id="classicPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">classic</div></div>
+<div id="chillPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Chill</div></div>
+`)
 ///// function
-// Previous Song
+
 function loadSong(song) {
 
     audio.src = song.path;
     console.log(song.id);
-    let liadd=document.getElementById(song.id)
-    console.log(liadd);
-    liadd.classList.add("bg-opacity-40")
+    let songOnPlay=document.getElementById(song.id)
+    songOnPlay.classList.add("bg-opacity-40")
+    let songOnPlayremove=document.getElementById(song.id+1)
+  songOnPlayremove.classList.remove("bg-opacity-40")
 if (song.id>1) {
-  let liremove=document.getElementById(song.id-1)
-  liremove.classList.remove("bg-opacity-40")
+  let prevSongOnPlay=document.getElementById(song.id-1)
+  prevSongOnPlay.classList.remove("bg-opacity-40")
 }else{
-  let liremove=document.getElementById(12)
+  let liremove=document.getElementById(songs.length)
   liremove.classList.remove("bg-opacity-40")
 }
   }
@@ -388,7 +397,7 @@ if (song.id>1) {
   function songInformation(song){
 
   }
-
+// Previous Song
 function prevSong() {
     songIndex--;
     if (songIndex < 0) {
@@ -453,23 +462,8 @@ loadSong(songs[songIndex]);
 
 
       ///custon scroll bar
-      let list=document.getElementById("music-list")
-      let scrollDiv=document.getElementById("scroll")
+    
 
-list.addEventListener("scroll",function (){
-  
-    let windowScroll=window.scrollY
-  
-   let windowclientHeaght=list.scrollHeight
-  
-   let windowInnerheight=list.clientHeight
-
-   let scrollPercent=windowScroll/(windowclientHeaght-windowInnerheight)
-   
-   scrollDiv.style.width=(scrollPercent*100)+'%'
-   scrollDiv.style.height="10px"
-   console.log(scrollPercent,"/",windowInnerheight,windowclientHeaght)
-})
 ////////////////////calender and reminder part
 //code will add in the future
 
