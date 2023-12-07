@@ -10,25 +10,25 @@ let addcategoryElem=document.getElementById("addcatgoryIcon")
 
 let input=document.querySelector("input")
 
-let addLabel=document.querySelector("#addlabel")
+let addNoteBtn=document.querySelector("#addlabel")
 let removeLabel=document.querySelector("#removelabel")
 //// add and dragable remove function
 function setLabelIcon(e){
   let targetLabel=e.target
-if(targetLabel.id=="addlabel"){addLabel.innerHTML="";addLabel.classList.remove("btn-danger"); addLabel.insertAdjacentHTML("afterbegin",'<?xml version="1.0" ?><svg class="mx-auto w-6 hover:scale-125" id="plus-add-more-detail" style="enable-background:new 0 0 15 15;" version="1.1" viewBox="0 0 15 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z"/><polygon points="8,3.5 7,3.5 7,7 3.5,7 3.5,8 7,8 7,11.5 8,11.5 8,8 11.5,8 11.5,7 8,7 "/></svg>')}
+if(targetLabel.id=="addlabel"){addNoteBtn.innerHTML="";addNoteBtn.classList.remove("btn-danger");addNoteBtn.insertAdjacentHTML("afterbegin",'<?xml version="1.0" ?><svg class="mx-auto w-6 hover:scale-125" id="plus-add-more-detail" style="enable-background:new 0 0 15 15;" version="1.1" viewBox="0 0 15 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z"/><polygon points="8,3.5 7,3.5 7,7 3.5,7 3.5,8 7,8 7,11.5 8,11.5 8,8 11.5,8 11.5,7 8,7 "/></svg>')}
 if(targetLabel.id=="removelabel"){removeLabel.innerHTML="";removeLabel.classList.remove("btn-danger"); removeLabel.insertAdjacentHTML("afterbegin",`<svg class="w-7 mx-auto hover:scale-125" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512"><path d="M322.62 254.95h-20.71v195.41h20.71V254.95zM111.53 2.02l105.89 36.64 3.26-9.41c.11-.32.23-.64.38-.94 3.69-9.25 13.28-14.76 23.08-13.35 2.56.37 4.75 1.19 7.16 2.03l60.97 21.1c.82.28 1.62.53 2.4.91 5.11 2.08 9.07 5.94 11.32 10.59 2.21 4.56 2.8 9.93 1.36 15.13-.17.61-.35 1.25-.55 1.83l-3.07 8.89 106.95 37.01c1.43.49 2.47.88 3.84 1.61 6.86 3.69 10.35 11.45 8.43 19.03-.21.82-.44 1.59-.72 2.38l-12.01 34.71c-1.67 4.85-6.97 7.41-11.81 5.74l-19.61-6.79a81.15 81.15 0 0 1 6.56 28.24c1.22.78 2.35 1.68 3.36 2.68 3.52 3.47 5.81 8.14 5.93 13.34.02 1.1-.11 2.21-.21 3.3L388.9 490.72c-.33 3.6-.93 6.8-2.75 10.18-3.52 6.55-10.03 11.1-18.14 11.1H117.06c-5.32 0-9.19-.47-13.67-3.53-5.28-3.61-8.74-9.7-9.35-16.46L68.66 215.9c-.08-.87-.16-1.82-.13-2.68.18-5.15 2.44-9.76 5.94-13.19 2.78-2.73 6.45-4.74 10.43-5.61-.19-.97-.3-1.96-.3-2.99v-66.36c0-8.26 6.76-15.02 15.02-15.02h78.92c8.25 0 15.01 6.76 15.01 15.02v22.45c12.39-10.17 28.24-16.28 45.52-16.28a71.52 71.52 0 0 1 32.54 7.79c4.18-3.5 8.71-6.6 13.54-9.22L79.45 58.63c-4.85-1.68-7.42-6.97-5.75-11.82l.07-.2 11.29-32.63C89.79.32 98.32-2.56 111.53 2.02zm143.75 252.93h-20.72v195.41h20.72V254.95zm-67.34 0h-20.71v195.41h20.71V254.95zm205.55-42.48H89.89c-1.99 0-2.94.34-2.75 2.45l25.11 273.2c.16 1.69.13 5.33 2.53 5.29h253.25c2.08 0 2.32-2.93 2.46-4.44l25.57-274.23c.16-1.77-.89-2.27-2.57-2.27zm-224.75-23.88h9.8v-52.32c0-5.98-4.9-10.87-10.88-10.87h-57.17c-5.98 0-10.87 4.89-10.87 10.87v52.32h69.12zm100.12 2.44H379.1c-2.52-15.25-11.22-28.4-23.44-36.82l-.15-.11-.23-.15-.38-.26-.38-.25-.02-.01-.37-.25-.39-.24-.26-.17-.13-.08-.4-.24-.39-.24-.11-.06-.29-.17-.4-.23-.36-.21-.04-.02-.4-.23-.41-.22-.41-.22-.41-.21-.41-.22-.06-.03-.35-.17-.42-.21-.32-.16-.09-.04-.42-.2-.43-.2-.16-.07-.26-.12-.43-.19-.42-.18-.01-.01-.42-.17-.71-.29-.16-.06-.84-.33-.02-.01-.12-.05-.32-.12-.44-.16-.4-.14-.04-.01-.45-.16-.44-.15-.24-.07-.21-.07-.45-.15-.45-.13-.06-.02-.39-.12-.45-.13-.35-.1-.11-.03-.45-.12-.46-.12-.18-.05-.28-.07-.46-.11-.46-.11h-.01l-.46-.1-.76-.17-.17-.03-.46-.09-.48-.09-.12-.03-.34-.06-.48-.08-.42-.07-.05-.01-.48-.07-.47-.07-.24-.04-.24-.03-.48-.06-.48-.05-.06-.01-.42-.05-.48-.05-.37-.03-.11-.01-.49-.04-.48-.04-.19-.01-.3-.02c-1.18-.08-2.37-.12-3.57-.12-27.51 0-50.44 19.73-55.12 46.67z"/></svg>`)}
 }
 function setLabelText(e){
   let targetLabel=e.target
-if(targetLabel.id=="addlabel"){addLabel.innerHTML="";addLabel.classList.add("btn-danger");addLabel.innerHTML="Add New Todo..." }
+if(targetLabel.id=="addlabel"){addNoteBtn.innerHTML="";addNoteBtn.classList.add("btn-danger");addNoteBtn.innerHTML="Add New Todo..." }
 if(targetLabel.id=="removelabel"){removeLabel.innerHTML="";removeLabel.classList.add("btn-danger"); removeLabel.innerHTML="Drag Here"; }
 }
 
 function checkScreenWidth(){
   if(window.screen.width>680){
-    addLabel.addEventListener("mouseenter",setLabelIcon)
+    addNoteBtn.addEventListener("mouseenter",setLabelIcon)
     removeLabel.addEventListener("mouseenter",setLabelIcon)
-    addLabel.addEventListener("mouseleave",setLabelText)
+    addNoteBtn.addEventListener("mouseleave",setLabelText)
     removeLabel.addEventListener("mouseleave",setLabelText)
   }else{
     console.log(window.screen.width);
@@ -99,8 +99,12 @@ function addCatgoryWork(){
       
       console.log(categoryID);
       let ul=document.getElementById(categoryID)
+     if(ul){
       ul.insertAdjacentElement("afterbegin",li)
       input.value=""
+     }else{
+      alert("plz create your catgory first")
+     }
       
     }else{
       alert(`Eror 
@@ -138,7 +142,12 @@ function hideCatgoryItem(e){
 /// set function to html element
 
 addcategoryElem.addEventListener("click",newCatgory)
-addLabel.addEventListener("click",addCatgoryWork)
+addNoteBtn.addEventListener("click",addCatgoryWork)
+//addLabel
+addNoteBtn.addEventListener("submit",function(event){
+  event.preventDefault()
+addCatgoryWork
+})
 window.addEventListener("click",selectionsCatgory)
 
 ////RGB Item Part
@@ -342,11 +351,12 @@ const housePlaylistIcon=document.getElementById("housePlaylistIcon")
 const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
 const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 ///// add html element of music part to dom
-selectPlayListBox.insertAdjacentHTML("afterbegin",` <div id="rockPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Rock</div></div>
+selectPlayListBox.insertAdjacentHTML("afterbegin",`
+<div id="rockPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Rock</div></div>
 <div id="popPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all"><?xml version="1.0" ?><svg id="rockPlaylistSvg class="hidden mx-auto w-4/12 hover:scale-125 hover:-rotate-12 transition-all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g id="_x30_1_x2C__Love_Song_x2C__Song_x2C__Love_x2C__Music_and_Multimedia_x2C__Cd"><g><path d="M423.871,101.962c4.295-4.295,9.028-9.028,14.278-14.278c9.587-9.595,14.867-22.347,14.867-35.905    C453.016,23.713,430.303,1,402.241,1c-10.452,0-20.423,3.137-28.835,8.965c-28.912-20.022-71.519-5.386-78.762,32.789    C154.778,25.608,30.986,134.534,30.986,276c0,31.107,5.927,61.127,17.623,89.44c-8.297,2.214-16.173,6.571-22.753,13.151    c-19.79,19.798-19.79,52.014,0.001,71.814l57.666,57.667c3.905,3.905,10.238,3.905,14.143,0    c7.396-7.396-10.198,10.198,37.097-37.097C173.595,497.185,218.777,511,265.986,511c129.874,0,235-105.11,235-235    C500.986,209.339,473.005,146.526,423.871,101.962z M265.986,491c-41.88,0-82.011-11.882-116.79-34.459    c1.969-1.969,4.009-4.009,6.14-6.14c19.846-19.863,19.829-51.963-0.003-71.813c-17.583-17.582-44.959-19.551-64.731-5.901    c-6.262-4.338-13.342-7.113-20.66-8.302C57.365,336.588,50.986,306.884,50.986,276c0-129.909,114.977-230.541,243.921-213.061    c1.946,8.814,6.394,17.376,13.763,24.749l57.667,57.667c3.905,3.905,10.238,3.905,14.143,0c6.949-6.949-8.151,8.151,29.231-29.231    c45.401,40.814,71.276,98.566,71.276,159.877C480.986,394.551,384.537,491,265.986,491z"/><path d="M355.986,276c0-49.626-40.374-90-90-90s-90,40.374-90,90s40.374,90,90,90S355.986,325.626,355.986,276z M195.986,276    c0-38.598,31.402-70,70-70s70,31.402,70,70s-31.402,70-70,70S195.986,314.598,195.986,276z"/><path d="M301.542,276c0-19.605-15.95-35.556-35.556-35.556S230.43,256.395,230.43,276s15.95,35.556,35.556,35.556    S301.542,295.605,301.542,276z M250.43,276c0-8.578,6.978-15.556,15.556-15.556s15.556,6.978,15.556,15.556    s-6.978,15.556-15.556,15.556S250.43,284.578,250.43,276z"/><path d="M275.986,128c0-5.523-4.477-10-10-10c-87.122,0-158,70.878-158,158c0,5.523,4.477,10,10,10s10-4.477,10-10    c0-76.093,61.907-138,138-138C271.509,138,275.986,133.523,275.986,128z"/><path d="M413.986,266c-5.523,0-10,4.477-10,10c0,76.093-61.907,138-138,138c-5.523,0-10,4.477-10,10s4.477,10,10,10    c87.122,0,158-70.878,158-158C423.986,270.477,419.509,266,413.986,266z"/></g></g><g id="Layer_1"/></svg>Pop</div></div>
 <div id="rapPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Rap</div></div>
-<div id="housePlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">house</div></div>
-<div id="classicPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">classic</div></div>
+<div id="housePlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">House</div></div>
+<div id="classicPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Classic</div></div>
 <div id="chillPlaylistIcon" class="m-auto w-10/12 h-3/6 bg-gradient-to-tr from-slate-50 to-indigo-900 bg-opacity-80 text-center rounded-xl"><div class="w-full h-full m-auto rounded-xl hover:-rotate-6 hover:scale-95 shadow-transparent shadow-sm bg-cyan-600 hover:bg-opacity-30 bg-opacity-60 transition-all">Chill</div></div>
 `)
 ///// function
@@ -363,6 +373,7 @@ function hidemusiclist(){
     musiclistElem.classList.remove("hidden")  
   }
 }
+///// set hide and show Element function to the musiclist and tthe olay list box
 musiclistElem.addEventListener("dblclick",hidemusiclist)
 selectPlayListBox.addEventListener("dblclick",hidemusiclist)
 ////// music controller func
@@ -476,7 +487,7 @@ loadSong(songs[songIndex]);
         currentTimeEl.textContent = currentMinutes + ":" + currentSeconds;
       }
     }
-      ///custon scroll bar
+///custon scroll bar
     
 
 ////////////////////calender and reminder part
