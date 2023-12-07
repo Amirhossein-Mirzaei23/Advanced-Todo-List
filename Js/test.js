@@ -487,6 +487,48 @@ loadSong(songs[songIndex]);
         currentTimeEl.textContent = currentMinutes + ":" + currentSeconds;
       }
     }
+
+
+//////// song progress RGB background function and data
+let bg=[
+   ["bg-gradient-to-l","from-sky-900","via-blue-500","to-purple-600"]
+  ,["bg-gradient-to-r","from-green-300","via-purple-300","to-indigo-400"]
+  ,["bg-gradient-to-l","from-sky-900","via-blue-500","to-purple-600"] 
+  ,["bg-gradient-to-r","from-green-300","via-purple-300","to-indigo-400"]
+  ,["bg-gradient-to-r","from-pink-300","via-red-500","to-yellow-500"]
+  ,["bg-gradient-to-r","from-pink-500","via-yellow-300","to-yellow-500"]
+  ,["bg-gradient-to-r","from-yellow-100","via-red-200","to-yellow-100"]
+  ,["bg-gradient-to-r","from-indigo-200","via-green-200","to-green-500"]
+  ,["bg-gradient-to-r","from-yellow-200","via-red-300","to-yellow-200"]
+  ,["bg-gradient-to-r","from-indigo-200","via-gray-400","to-gray-600"]
+  ,["bg-gradient-to-r","from-red-200","via-green-300","to-blue-500"]
+  ,["bg-gradient-to-r","from-gray-200","via-green-400","to-purple-700" ]
+  ,["bg-gradient-to-r","from-green-200","via-green-300","to-blue-400" ]
+  ,["bg-gradient-to-r","from-green-200","via-gray-600",,"to-purple-400" ]
+  ,["bg-gradient-to-r","from-green-200","via-green-500","to-blue-800"]
+  ,["bg-gradient-to-r","from-indigo-300","via-blue-300","to-blue-500" ]
+  ,["bg-gradient-to-r","from-gray-400","via-green-300","to-blue-500"]
+  ,["bg-gradient-to-r","from-blue-100","via-purple-300","to-blue-500"]
+  ,["bg-gradient-to-r","from-red-400","via-purple-300","to-blue-500"]
+]
+index=0
+
+setInterval(function(){
+     index++
+    if(index>18){
+      index=1
+      }
+      progress.classList.remove("bg-sky-400")
+      progress.classList.remove(bg[index-1][0])
+      progress.classList.remove(bg[index-1][1])
+      progress.classList.remove(bg[index-1][2])
+      progress.classList.remove(bg[index-1][3])
+      progress.classList.add(bg[index][0])
+      progress.classList.add(bg[index][1])
+      progress.classList.add(bg[index][2])
+      progress.classList.add(bg[index][3]) 
+      
+},1000)
 ///custon scroll bar
     
 
