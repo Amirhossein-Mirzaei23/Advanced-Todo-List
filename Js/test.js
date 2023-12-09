@@ -561,7 +561,7 @@ setInterval(function(){
       progress.classList.add(bg[index][2])
       progress.classList.add(bg[index][3]) 
       
-},1000)
+},800)
     
 
 ////////////////////calender and reminder part
