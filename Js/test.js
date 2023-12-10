@@ -350,7 +350,7 @@ const popIcon=`<img class="hidden w-8 mx-auto mt-1 hover:scale-110" src="https:/
 const rapIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/microphone_in_fist.png" alt="Rap Icon"/>`
 const houseIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://visualpharm.com/assets/224/International%20Music-595b40b65ba036ed117d4756.svg" alt="house music Icon"/>`
 const classicIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://visualpharm.com/assets/564/Classic%20Music-595b40b65ba036ed117d0f97.svg" alt="rockIcon"/>`
-const chillIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="chill Hop Icon"/>`
+const chillIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://visualpharm.com/assets/101/Drum%20Set-595b40b85ba036ed117dd04e.svg" alt="chill Hop Icon"/>`
 
 ///// add html element of music part to dom
 selectPlayListBox.insertAdjacentHTML("afterbegin",`
