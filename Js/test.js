@@ -348,9 +348,9 @@ const selectPlayListBox=document.getElementById("selectplaylistbox")
 const rockIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="Rock Icon"/>`
 const popIcon=`<img class="hidden w-8 mx-auto mt-1 hover:scale-110" src="https://www.shareicon.net/data/128x128/2016/07/04/790994_multimedia_512x512.png" alt="Pop Icon"/>`
 const rapIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/microphone_in_fist.png" alt="Rap Icon"/>`
-const houseIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="rockIcon"/>`
-const classicIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="rockIcon"/>`
-const chillIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="rockIcon"/>`
+const houseIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://visualpharm.com/assets/224/International%20Music-595b40b65ba036ed117d4756.svg" alt="house music Icon"/>`
+const classicIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://visualpharm.com/assets/564/Classic%20Music-595b40b65ba036ed117d0f97.svg" alt="rockIcon"/>`
+const chillIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="chill Hop Icon"/>`
 
 ///// add html element of music part to dom
 selectPlayListBox.insertAdjacentHTML("afterbegin",`
