@@ -289,14 +289,10 @@ id:12}
 const user=(name,artist,time)=>{
 this.songname=name
 this.artist=artist
-//this.time=time
+
 
 }
-//function limaker(name,artist,time){
-//
-//let li=document.createElement("li")
-//
-//}
+
 songs.forEach(object=>{
 
   musiclist.insertAdjacentHTML("beforeend",` <li id=${object.id} class="mt-1 w-full h-10 bg-orange-400  grid grid-cols-2 px-2 rounded-xl hover:scale-105 hover:-py-1">
@@ -464,7 +460,10 @@ function pause(){
 
     audio.pause()
 }
-
+function selectsong(e){
+  console.log(e.target)
+}
+musiclistElem.addEventListener("click",selectsong)
 // On Load - Select First Song
 loadSong(songs[songIndex]);
     // Set ProgressBar
