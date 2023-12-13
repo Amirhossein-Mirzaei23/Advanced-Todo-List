@@ -407,20 +407,17 @@ selectPlayListBox.childNodes.forEach((child)=>{
 setAddEventListener()
 ////// music controller func
 function loadSong(song) {
-
     audio.src = song.path;
-    console.log(song.id);
-    let songOnPlay=document.getElementById(song.id)
-    songOnPlay.classList.add("bg-opacity-40")
-    let songOnPlayremove=document.getElementById(song.id+1)
-  songOnPlayremove.classList.remove("bg-opacity-40")
-if (song.id>1) {
-  let prevSongOnPlay=document.getElementById(song.id-1)
-  prevSongOnPlay.classList.remove("bg-opacity-40")
-}else{
-  let liremove=document.getElementById(songs.length)
-  liremove.classList.remove("bg-opacity-40")
-}
+    musiclist.childNodes.forEach(child=>{
+     if (child.tagName=="LI") {
+
+      if (child.classList.contains("bg-opacity-40")) {  
+            child.classList.remove("bg-opacity-40")
+            }
+     }
+     let songOnPlay=document.getElementById(song.id)
+     songOnPlay.classList.add("bg-opacity-40")
+    })
   }
   ///song information dispaly
   function songInformation(song){
@@ -463,6 +460,7 @@ function pause(){
 ////////////////////////////////////function select song form play slit
 function selectsongfromplaylist(e){
   let selectedElemId=e.target.parentElement.id
+  console.log(selectedElemId);
   songs.forEach(song=>{
     if (song.id==selectedElemId) {
       loadSong(song)
