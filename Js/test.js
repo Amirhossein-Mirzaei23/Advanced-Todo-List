@@ -460,10 +460,18 @@ function pause(){
 
     audio.pause()
 }
-function selectsong(e){
-  console.log(e.target)
+////////////////////////////////////function select song form play slit
+function selectsongfromplaylist(e){
+  let selectedElemId=e.target.parentElement.id
+  songs.forEach(song=>{
+    if (song.id==selectedElemId) {
+      loadSong(song)
+      
+      play()
+    }
+  })
 }
-musiclistElem.addEventListener("click",selectsong)
+musiclistElem.addEventListener("click",selectsongfromplaylist)
 // On Load - Select First Song
 loadSong(songs[songIndex]);
     // Set ProgressBar
