@@ -525,11 +525,12 @@ function selectsongfromplaylist(e){
   console.log(selectedElemId);
   songs.forEach(song=>{
     if (song.id==selectedElemId) {
+      songIndex=song.id-1
       loadSong(song)
-      
       play()
     }
   })
+  console.log(songIndex);
 }
 musiclistElem.addEventListener("click",selectsongfromplaylist)
 // On Load - Select First Song
