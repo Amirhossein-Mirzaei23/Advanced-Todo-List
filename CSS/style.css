@@ -4,6 +4,8 @@
 
 body {
     background: #363062;
+    min-height: 100vh;
+    padding: 0 10px;
 }
 .bg-catgory-container-t1{
     background-color: #BEADFA;
@@ -33,3 +35,12 @@ background-color: #F99417;
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  
+
+  

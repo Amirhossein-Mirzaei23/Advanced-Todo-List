@@ -283,8 +283,36 @@ id:11},
 "https://dl2.hitseda.com/Music/ak/nab-selections/Flori%20Mumajesi%20-%20Ku%20isha%20une.mp3",
 displayName: "Ku isha une",
 artist: "Flori Mumajesi & Argjentina",
-id:12}
- 
+id:12},
+
+
+
+
+{ path:"https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3",
+displayName: "mandoline",
+artist: "otnicka",
+time:"03:20",
+id:13
+},
+{ path:"https://dl2.hitseda.com/Music/ak/nab-selections/Ghostly%20Kisses%20-%20Roses.mp3",
+displayName: "Roses",
+artist: " Ghostly Kisses",
+time:"03:28",
+id:14
+},
+{ path:"https://dl2.hitseda.com/Music/ak/insta-music/Jah%20Khalib%20-%20Leyla.mp3",
+displayName: "Leylal",
+artist: "Jah Khalìb",
+time:"04:06",
+id:15
+},
+{ path:"https://dl2.hitseda.com/Music/ak/insta-music/JONY-Love-your-voice.mp3",
+displayName: "Love your voice",
+artist: "JOHNY",
+time:"02:30",
+id:16
+},
+
 ];
 let house =[
 { path:"https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3",
@@ -607,8 +635,33 @@ setInterval(function(){
 },800)
     
 
-////////////////////calender and reminder part
+////////////////////////////////////////////////////////////////////////////////////////calender and reminder part
 //code will add in the future
+let date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth();
+ 
+const day = document.getElementById("calendar-dates");
+ 
+const currdate = document.getElementById("calendar-current-date");
+
+const prenexIcons = document.getElementById("calendar-navigation");
+ 
+// Array of month names
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
 
 
 ////////////////////point hint and motivaion part

@@ -11,8 +11,33 @@
     <title>Todo LList</title>
 </head>
 <body>
+<!-------Calender Container-------->
  <main class="grid grid-cols-3 max-sm:grid-cols-1 max-sm:grid-rows-2">
-    <main id="calander" class="max-sm:hidden"></main>
+    <main id="calander" class="max-sm:hidden mt-5">
+      <div id="calendar-container" class="rounded-xl bg-slate-100 p-1">
+         <header id="calendar-header" class="flex items-center justify-between p-1">
+             <p id="calendar-current-date"></p>
+             <div id="calendar-navigation" class="flex gap-3 mr-2">
+                 <span id="calendar-prev" class="fa fa-chevron-left"></span>
+                 <span id="calendar-next" class="fa fa-chevron-right"></span>
+             </div>
+         </header>
+  
+         <div id="calendar-body">
+             <ul id="calendar-weekdays" class="grid grid-cols-7  mx-auto justify-items-center items-center">
+                 <li>Sun</li>
+                 <li>Mon</li>
+                 <li>Tue</li>
+                 <li>Wed</li>
+                 <li>Thu</li>
+                 <li>Fri</li>
+                 <li>Sat</li>
+             </ul>
+             <ul id="calendar-dates" class="grid  p-1 mx-auto grid-cols-7 justify-items-center items-center"></ul>
+         </div>
+     </div>
+    </main>
+    <!-------Todo List Container-------->
     <main id="notelist-container" class="container mt-3 pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto ">
       <div id="catgories">
         <div class="flex items-center bg-catgory-container-t1 py-2 px-1 rounded-lg" ><div id="addcatgoryIcon"><p class="float-left text-lg">Add New Catgory</p><?xml version="1.0" ?><svg class="float-right w-1/12" id="plus-add-more-detail" style="enable-background:new 0 0 15 15;" version="1.1" viewBox="0 0 15 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z"/><polygon points="8,3.5 7,3.5 7,7 3.5,7 3.5,8 7,8 7,11.5 8,11.5 8,8 11.5,8 11.5,7 8,7 "/></svg></div>
@@ -38,6 +63,7 @@
         </label>
         </form>
     </main>
+<!-------Music Player Container-------->
     <main id="music-container" class="w-11/12 h-72 px-1 max-sm:m-auto max-sm:mt-24">
 
       <audio src=""></audio>
