@@ -486,9 +486,6 @@ function loadSong(song) {
     })
   }
   ///song information dispaly
-  function songInformation(song){
-
-  }
 // Previous Song
 function prevSong() {
     songIndex--;
@@ -496,7 +493,6 @@ function prevSong() {
       songIndex = songs.length - 1;
     }
     loadSong(songs[songIndex]);
-    songInformation(songs[songIndex])
     play();
   }
   
@@ -507,7 +503,7 @@ function prevSong() {
       songIndex = 0;
     }
     loadSong(songs[songIndex]);
-    songInformation(songs[songIndex])
+
     play();
   }
 function play(){
