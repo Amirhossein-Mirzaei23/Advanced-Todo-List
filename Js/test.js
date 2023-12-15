@@ -1,7 +1,7 @@
 window.addEventListener("load",()=>{
  // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
  // alert("by single Double click on each item ,item will be deleted")
-  alert(`Hi ,this is a Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
   alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
   alert(`And Welcome 🥳`)
 })
