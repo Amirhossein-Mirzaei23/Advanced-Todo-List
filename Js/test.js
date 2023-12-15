@@ -400,6 +400,8 @@ const playBtn = document.getElementById("play");
 const nextBtn = document.getElementById("next");
     
 let audioBtn=document.getElementById("play")
+let playingSvg=document.getElementById("playSvg")
+let pauseSvg=document.getElementById("pauseSvg")
 let audio=document.querySelector("audio")
 let isPlaying=false
 
@@ -509,12 +511,14 @@ function prevSong() {
 function play(){
     isPlaying=true
     audio.play()
-    playBtn.classList.replace("fa-play", "fa-pause");
+    playingSvg.classList.add("hidden")
+    pauseSvg.classList.remove("hidden")
     playBtn.setAttribute("title", "Pause");
 }
 function pause(){
     isPlaying=false
-    playBtn.classList.replace("fa-pause", "fa-play");
+    playingSvg.classList.remove("hidden")
+    pauseSvg.classList.add("hidden")
     playBtn.setAttribute("title", "Play");
 
     audio.pause()
@@ -590,6 +594,7 @@ loadSong(songs[songIndex]);
 
 
 //////// song progress RGB background function and data
+//// create a array to set the each peace of arry as part of gradiant background of music progress bar
 let bg=[
    ["bg-gradient-to-l","from-sky-900","via-blue-500","to-purple-600"]
   ,["bg-gradient-to-r","from-green-300","via-purple-300","to-indigo-400"]
@@ -611,26 +616,31 @@ let bg=[
   ,["bg-gradient-to-r","from-blue-100","via-purple-300","to-blue-500"]
   ,["bg-gradient-to-r","from-red-400","via-purple-300","to-blue-500"]
 ]
-index=0
-
+ let bgIndex=1
+/// set a interval to chnage progressbar gradiant background 
 setInterval(function(){
-     index++
-    if(index>18){
-      index=1
-      }
-      progress.classList.remove("bg-sky-400")
-      progress.classList.remove(bg[index-1][0])
-      progress.classList.remove(bg[index-1][1])
-      progress.classList.remove(bg[index-1][2])
-      progress.classList.remove(bg[index-1][3])
-      progress.classList.add(bg[index][0])
-      progress.classList.add(bg[index][1])
-      progress.classList.add(bg[index][2])
-      progress.classList.add(bg[index][3]) 
-      
-},800)
-    
+  bgIndex++
+  if (bgIndex>bg.length) {
+    bgIndex=1
+  }
+      let Index=bgIndex
 
+      progress.classList.remove("bg-sky-400")
+      progress.classList.remove(bg[Index-1][0])
+       Index=bgIndex
+      progress.classList.remove(bg[Index-1][1])
+      Index=bgIndex
+      progress.classList.remove(bg[Index-1][2])
+      Index=bgIndex
+      progress.classList.remove(bg[Index-1][3])
+      Index=bgIndex
+      progress.classList.add(bg[Index][0])
+      progress.classList.add(bg[Index][1])
+      progress.classList.add(bg[Index][2])
+      progress.classList.add(bg[Index][3]) 
+      
+},2000)
+    
 ///////////////////////////////////////////////calender and reminder part
 /////////////////////////////////////reminder code will add in the future
 let date = new Date();
@@ -661,12 +671,12 @@ const calendarmanipulate=()=>{
 let firstDay=new Date(year,month).getDay()
 let lastDate=new Date(year,month+1,0).getDate()
 let dayend = new Date(year, month, lastDate).getDay();
-
+let monthlastdate = new Date(year, month, 0).getDate();
 let liElem=""
     // this is loop to add last date of pervios month but as empty li Elem
     for (let i = firstDay; i > 0; i--) {
       liElem +=
-          `<li class="inactive"></li>`;
+          `<li class="opacity-30">${monthlastdate - i + 1}</li>`;
   }
 
   // Loop to add the dates of the current month
@@ -676,8 +686,8 @@ let liElem=""
       let isToday = i === date.getDate()
           && month === new Date().getMonth()
           && year === new Date().getFullYear()
-          ? "active"
-          : "";
+          ? "px-1 rounded-sm bg-gray-400 bg-opacity-60 text-red-950 cursor-pointer"
+          : "w-8 py-1 text-center rounded-xl hover:bg-slate-200 cursor-pointer";
        liElem += `<li class="${isToday}">${i}</li>`;
   }
 
