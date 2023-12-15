@@ -1,7 +1,9 @@
 window.addEventListener("load",()=>{
  // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
  // alert("by single Double click on each item ,item will be deleted")
- // alert("when your job is done you could have a single click on your job ")
+  alert(`Hi ,this is a Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
+  alert(`And Welcome 🥳`)
 })
 ////////////////////  Add and make Catgory part (variable and function)
 let categoriesDivElem=document.querySelector("#catgories")
@@ -10,7 +12,10 @@ let addcategoryElem=document.getElementById("addcatgoryIcon")
 
 let input=document.querySelector("input")
 
+let form=document.querySelector("form")
+
 let addNoteBtn=document.querySelector("#addlabel")
+
 let removeLabel=document.querySelector("#removelabel")
 //// add and dragable remove function
 function setLabelIcon(e){
@@ -85,6 +90,8 @@ function selectionsCatgory(e){
     
   }
 /// add note to each category that selected by user
+
+
 function addCatgoryWork(){
   let notevalue=input.value
     if(notevalue){
@@ -103,7 +110,8 @@ function addCatgoryWork(){
       ul.insertAdjacentElement("afterbegin",li)
       input.value=""
      }else{
-      alert("plz create your catgory first")
+      alert(`plz create your catgory first 
+      by clik on Add New Category part`)
      }
       
     }else{
@@ -139,15 +147,19 @@ function hideCatgoryItem(e){
     ul.classList.add("hidden")
     svg.classList.add("rotate-180")}
 }
+
 /// set function to html element
 
 addcategoryElem.addEventListener("click",newCatgory)
 addNoteBtn.addEventListener("click",addCatgoryWork)
 //addLabel
-addNoteBtn.addEventListener("submit",function(event){
-  event.preventDefault()
-addCatgoryWork
-})
+form.addEventListener("submit",function(event){
+  event.preventDefault()  
+  console.log("click");
+   if (event.which == '13') {
+    addCatgoryWork}
+addCatgoryWork()
+  })
 window.addEventListener("click",selectionsCatgory)
 
 ////RGB Item Part
@@ -369,19 +381,7 @@ songs.forEach(object=>{
      <h4 class="float-right font-serif text-xs overflow-hidden whitespace-nowrap">${object.artist}</h4>
   </div>
   </li>`)
-}
-
-)
-
-
-
-
-
-
-
-
-
-
+})
 
  //////////////variables 
 
@@ -445,7 +445,7 @@ function hidemusiclist(){
 }
 ///// set hide and show Element function to the musiclist and tthe olay list box
 musiclistElem.addEventListener("dblclick",hidemusiclist)
-selectPlayListBox.addEventListener("dblclick",hidemusiclist)
+selectPlayListBox.addEventListener("click",hidemusiclist)
 ///////////////create show icon function for seelct playslist box
 function setIcon(event){
   let childElem=event.target.childNodes[0]
@@ -552,7 +552,6 @@ loadSong(songs[songIndex]);
 
 
     audioBtn.addEventListener("click",function(){
- 
       if(isPlaying){
           pause()
       }else{
@@ -632,19 +631,17 @@ setInterval(function(){
 },800)
     
 
-////////////////////////////////////////////////////////////////////////////////////////calender and reminder part
-//code will add in the future
+///////////////////////////////////////////////calender and reminder part
+/////////////////////////////////////reminder code will add in the future
 let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
  
 const day = document.getElementById("calendar-dates");
- 
 const currdate = document.getElementById("calendar-current-date");
-
 const prenexIcons = document.getElementById("calendar-navigation");
  
-// Array of month names
+
 const months = [
     "January",
     "February",
@@ -660,6 +657,88 @@ const months = [
     "December"
 ];
 
+const calendarmanipulate=()=>{
+let firstDay=new Date(year,month).getDay()
+let lastDate=new Date(year,month+1,0).getDate()
+let dayend = new Date(year, month, lastDate).getDay();
 
-////////////////////point hint and motivaion part
-//code will add in the future
+let liElem=""
+    // this is loop to add last date of pervios month but as empty li Elem
+    for (let i = firstDay; i > 0; i--) {
+      liElem +=
+          `<li class="inactive"></li>`;
+  }
+
+  // Loop to add the dates of the current month
+  for (let i = 1; i <= lastDate; i++) {
+
+      // Check if the current date is today
+      let isToday = i === date.getDate()
+          && month === new Date().getMonth()
+          && year === new Date().getFullYear()
+          ? "active"
+          : "";
+       liElem += `<li class="${isToday}">${i}</li>`;
+  }
+
+  // Loop to add the first dates of the next month but as empty li Elem
+  for (let i = dayend; i < 6; i++) {
+    liElem += `<li class="inactive"></li>`
+  }
+
+  currdate.innerText = `${months[month]} ${year}`;
+
+  day.innerHTML = liElem;
+}
+
+calendarmanipulate();
+
+
+let nextMonthBtn=document.getElementById("calendar-next")
+let prevMonthBtn=document.getElementById("calendar-prev")
+// set add event listener to next month Icon
+nextMonthBtn.addEventListener("click",()=>{
+  month =  month + 1;
+
+  // Check if the month is out of range
+  if (month < 0 || month > 11) {
+
+      // Set the date to the first day of the 
+      // month with the new year
+      date = new Date(year, month, new Date().getDate());
+
+      // Set the year to the new year
+      year = date.getFullYear();
+      // Set the month to the new month
+      month = date.getMonth();
+  }
+  else {
+      // Set the date to the current date
+      date = new Date();
+  }
+  calendarmanipulate();
+})
+
+// set add event listener to previos month Icon
+
+prevMonthBtn.addEventListener("click",()=>{
+  month =  month - 1;
+
+  // Check if the month is out of range
+  if (month < 0 || month > 11) {
+
+      // Set the date to the first day of the 
+      // month with the new year
+      date = new Date(year, month, new Date().getDate());
+
+      // Set the year to the new year
+      year = date.getFullYear();
+      // Set the month to the new month
+      month = date.getMonth();
+  }
+  else {
+      // Set the date to the current date
+      date = new Date();
+  }
+  calendarmanipulate();
+})
