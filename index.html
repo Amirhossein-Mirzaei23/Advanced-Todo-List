@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>  
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="CSS/style.css">
     <title>Todo LList</title>
 </head>
 <body>
 <!-------Calender Container-------->
- <main class="grid grid-cols-3 max-sm:grid-cols-1 max-sm:grid-rows-2 mt-3">
+<header>
+  <div class="flex gap-1 mt-2">
+    <button id="themeBtn" class="w-16 h-12 px-2 rounded-xl bg-sky-800 bg-opacity-70"><img src="https://uxwing.com/wp-content/themes/uxwing/download/arts-graphic-shapes/website-design-icon.png" alt="change theme"></button>
+    <button id="hideBtn" class=" w-16 px-2 rounded-xl bg-sky-800 h-12 bg-opacity-70"><img src="https://www.svgrepo.com/show/380007/eye-password-hide.svg" alt="hide all item"></button>
+  
+  </div>
+  </header>
+ <main class="grid grid-cols-3 max-sm:grid-cols-1 max-sm:grid-rows-2 mt-3 transitionn">
     <main id="calander" class="max-sm:hidden">
-      <div id="calendar-container" class="rounded-xl bg-slate-100 p-1">
+      <div id="calendar-container" class="rounded-xl bg-slate-100 p-1 bg-opacity-80">
          <header id="calendar-header" class="flex items-center justify-between p-1">
              <p id="calendar-current-date" class="text-red-950"></p>
              <div id="calendar-navigation" class="flex gap-3 mr-2">
@@ -38,7 +45,7 @@
      </div>
     </main>
     <!-------Todo List Container-------->
-    <main id="notelist-container" class="container pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto ">
+    <main id="notelist-container" class="container pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto bg-opacity-80">
       <div id="catgories">
         <div class="flex items-center bg-catgory-container-t1 py-2 px-1 rounded-lg" >
           <div id="addcatgoryIcon">

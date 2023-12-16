@@ -1,11 +1,15 @@
 window.addEventListener("load",()=>{
  // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
  // alert("by single Double click on each item ,item will be deleted")
-  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
-  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
-  alert(`And Welcome 🥳`)
+//  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+//  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
+//  alert(`And Welcome 🥳`)
 })
 ////////////////////  Add and make Catgory part (variable and function)
+const body=document.querySelector("body")
+const mainBody=document.querySelector("main")
+let changethemeBtn=document.getElementById("themeBtn")
+let hideItemBtn=document.getElementById("hideBtn")
 let categoriesDivElem=document.querySelector("#catgories")
 
 let addcategoryElem=document.getElementById("addcatgoryIcon")
@@ -17,7 +21,58 @@ let form=document.querySelector("form")
 let addNoteBtn=document.querySelector("#addlabel")
 
 let removeLabel=document.querySelector("#removelabel")
-//// add and dragable remove function
+
+let calendarContainer=document.getElementById("calander")
+
+let musicContainer=document.getElementById("music-container")
+
+let notelistContainer=document.getElementById("notelist-container")
+/////////////////////chnage theme function and array
+
+// array of some gif url
+animatedBackground=[
+  "https://clipart-library.com/img/1922221.gif",
+  "https://steamuserimages-a.akamaihd.net/ugc/930428699254557419/35CEA61D2D82605E50BBA4B88EDAFC3AF40AA808/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+  "https://steamuserimages-a.akamaihd.net/ugc/930428699254558429/F2D4AB337B68015813EF032DD188C985CAB50A72/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+  "https://wallpaperaccess.com/full/9142379.gif",
+  "https://clipart-library.com/img/1922157.gif",
+  "https://usagif.com/wp-content/uploads/rainy-21.gif",
+  
+]
+//// a add event listener on change theme btn to change doc background 
+//   which use animated background array to set new url
+let bgnumber=0
+changethemeBtn.addEventListener("click",function(){
+if (bgnumber<animatedBackground.length) {
+  bgnumber++
+} else {
+  bgnumber=0
+}
+  body.style.cssText=` background-image:url(${animatedBackground[bgnumber]});`
+})
+/// a func to fade out and fade in all item in document wich use some key frame of css file
+ hideItemBtn.addEventListener("click",hideAll)
+function hideAll(){
+ if (mainBody.style.opacity==="0") {
+ 
+  calendarContainer.style.animation="backIn 2s"
+  notelistContainer.style.animation="backIn 2s 200ms"
+  musicContainer.style.animation="backIn 2s 400ms"
+
+  mainBody.style.animation="show 2s linear"
+  mainBody.style.opacity="100%"
+} else {
+  
+  mainBody.style.animation="fade 2s linear"
+  mainBody.style.opacity="0%"
+
+  calendarContainer.style.animation="goIn 2s "
+  notelistContainer.style.animation="goIn 2s 200ms"
+  musicContainer.style.animation="goIn 2s 400ms"
+}}
+
+  
+//// functions for set replacement svg to addBtn and dragItmem Btn
 function setLabelIcon(e){
   let targetLabel=e.target
 if(targetLabel.id=="addlabel"){addNoteBtn.innerHTML="";addNoteBtn.classList.remove("btn-danger");addNoteBtn.insertAdjacentHTML("afterbegin",'<?xml version="1.0" ?><svg class="mx-auto w-6 hover:scale-125" id="plus-add-more-detail" style="enable-background:new 0 0 15 15;" version="1.1" viewBox="0 0 15 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z"/><polygon points="8,3.5 7,3.5 7,7 3.5,7 3.5,8 7,8 7,11.5 8,11.5 8,8 11.5,8 11.5,7 8,7 "/></svg>')}
@@ -688,7 +743,7 @@ let liElem=""
           && year === new Date().getFullYear()
           ? "px-1 rounded-sm bg-gray-400 bg-opacity-60 text-red-950 cursor-pointer"
           : "w-8 py-1 text-center rounded-xl hover:bg-slate-200 cursor-pointer";
-       liElem += `<li class="${isToday}">${i}</li>`;
+       liElem += `<li id="calendarDay" class="${isToday}">${i}</li>`;
   }
 
   // Loop to add the first dates of the next month but as empty li Elem
