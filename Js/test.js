@@ -1,9 +1,9 @@
 window.addEventListener("load",()=>{
  // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
  // alert("by single Double click on each item ,item will be deleted")
-  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
-  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
-  alert(`And Welcome 🥳`)
+//  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+//  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
+//  alert(`And Welcome 🥳`)
 })
 ////////////////////  Add and make Catgory part (variable and function)
 const body=document.querySelector("body")
@@ -106,15 +106,15 @@ function newCatgory(){
       let categoryTitle=document.createElement("span")
       let ul= document.createElement('ul')
       let randomNumber=Math.floor(Math.random()*100)
-      let dropDownSvg=`<svg id="svg${catgoryname}"  class="svg-icon transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg>`
+      let dropDownSvg=`<svg id="svg${catgoryname}"  class="svg-icon float-right  transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg>`
     
       categoryTitle.innerHTML=catgoryname
       ul.id=JSON.stringify(catgoryname+randomNumber)
       categoryElem.className="mt-1 text-center bg-catgory-t1 rounded-3xl "
     
       categoryElem.insertAdjacentElement("afterbegin",ul)
-      categoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
-      categoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="mt-px float-right -translate-x-3">${dropDownSvg}</div>`)
+     // categoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
+      categoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="text-center bg-state-800 w-full mt-px mx-auto -translate-x-3">${catgoryname} ${dropDownSvg}</div>`)
       categoriesDivElem.insertAdjacentElement("beforeend",categoryElem)
       localStorage.setItem("key",`${ul.id}`)
     }else{
@@ -124,12 +124,11 @@ function newCatgory(){
 
 ////////// category selection to add note
 function selectionsCatgory(e){
-
-  if( e.target.tagName.toLowerCase() =="menu"){
-
-         let categoryID=e.target.childNodes[2].id
+console.log();
+  if( e.target.parentElement.tagName.toLowerCase() =="menu"){
+   let selectedCategory=e.target.parentElement
+         let categoryID=selectedCategory.childNodes[1].id
          localStorage.setItem("key",`${categoryID}`)
-         console.log(e.target.childNodes[2].id);
   }
 }
 
@@ -191,16 +190,21 @@ function deleteFromCatgory(e){
 // hide category item by click on the Icon
 function hideCatgoryItem(e){
   let id=localStorage.getItem("key")
-  let svg=e.target
-  let menu=e.target.parentElement.parentElement
-  let ul=menu.childNodes[2]
-
+  let svg=e.target.childNodes[1]
+  let menu
+  if (e.target.tagName==="DIV") {
+    menu=e.target.parentElement
+    let ul=menu.childNodes[1]
   if(ul.classList.contains("hidden")){
     ul.classList.remove("hidden")
     svg.classList.remove("rotate-180")
   }else{
     ul.classList.add("hidden")
     svg.classList.add("rotate-180")}
+  }
+  
+  
+
 }
 
 /// set function to html element
