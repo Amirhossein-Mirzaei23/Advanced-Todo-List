@@ -627,6 +627,10 @@ loadSong(songs[songIndex]);
         // 
         const progressPercent = (currentTime / duration) * 100;
         progress.style.width = progressPercent + "%";
+        ///se fuction for playing next song when prev song is going to end
+        if (progressPercent==100) {
+         nextSong()
+        }
         // 
         const durationMinutes = Math.floor(duration / 60);
         let durationSeconds = Math.floor(duration % 60);
