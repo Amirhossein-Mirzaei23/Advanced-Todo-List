@@ -505,7 +505,7 @@ function hidemusiclist(){
   }
 }
 ///// set hide and show Element function to the musiclist and tthe olay list box
-musiclistElem.addEventListener("dblclick",hidemusiclist)
+musicContainer.addEventListener("dblclick",hidemusiclist)
 selectPlayListBox.addEventListener("click",hidemusiclist)
 ///////////////create show icon function for seelct playslist box
 function setIcon(event){
