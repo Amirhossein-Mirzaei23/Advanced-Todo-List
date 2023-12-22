@@ -585,7 +585,7 @@ function pause(){
 ////////////////////////////////////function select song form play slit
 function selectsongfromplaylist(e){
   let selectedElemId=e.target.parentElement.id
-  console.log(selectedElemId);
+
   songs.forEach(song=>{
     if (song.id==selectedElemId) {
       songIndex=song.id-1
@@ -593,7 +593,7 @@ function selectsongfromplaylist(e){
       play()
     }
   })
-  console.log(songIndex);
+
 }
 musiclistElem.addEventListener("click",selectsongfromplaylist)
 // On Load - Select First Song
@@ -683,7 +683,8 @@ let bg=[
 /// set a interval to chnage progressbar gradiant background 
 setInterval(function(){
   bgIndex++
-  if (bgIndex>bg.length) {
+  
+  if (bgIndex>=bg.length) {
     bgIndex=1
   }
       let Index=bgIndex
@@ -702,7 +703,7 @@ setInterval(function(){
       progress.classList.add(bg[Index][2])
       progress.classList.add(bg[Index][3]) 
       
-},2000)
+},1600)
     
 ///////////////////////////////////////////////calender and reminder part
 /////////////////////////////////////reminder code will add in the future
