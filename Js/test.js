@@ -730,6 +730,33 @@ const months = [
     "December"
 ];
 
+//let =document.getElementById("")
+//let =document.getElementById("")
+let modalTitle=document.getElementById("exampleModalLabel")
+let modalNoteInput=document.getElementById("note-text")
+let modalCloseBtn=document.getElementById("modal-close-btn")
+let modalSaveBtn=document.getElementById("modal-save-btn")
+
+let item=null
+
+function modal(event){
+ item= event.target.id
+ modalTitle.innerHTML=item.slice(11)
+
+modalNoteInput.addEventListener("keyup",function(){
+  note=modalNoteInput.value
+  modalSaveBtn.addEventListener("click",function(){
+     localStorage.setItem(item,note)
+  })
+  
+})
+
+}
+function showmodal(event){
+ let note= localStorage.getItem(`${event.target.id}`)
+ modalNoteInput.value=note
+
+}
 const calendarmanipulate=()=>{
 let firstDay=new Date(year,month).getDay()
 let lastDate=new Date(year,month+1,0).getDate()
@@ -751,7 +778,7 @@ let liElem=""
           && year === new Date().getFullYear()
           ? "px-1 rounded-sm bg-gray-400 bg-opacity-60 text-red-950 cursor-pointer"
           : "w-8 py-1 text-center rounded-xl hover:bg-slate-200 cursor-pointer";
-       liElem += `<li id="calendarDay" class="${isToday}">${i}</li>`;
+       liElem += `<li data-bs-toggle="modal" data-bs-target="#exampleModal" id="calendarDay${months[month]} ${i}" onclick="modal(event)" onmouseenter="showmodal(event)" class="${isToday}">${i}</li>`;
   }
 
   // Loop to add the first dates of the next month but as empty li Elem

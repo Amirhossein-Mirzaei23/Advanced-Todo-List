@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,6 +43,31 @@
              <ul id="calendar-dates" class="grid  p-1 mx-auto grid-cols-7 justify-items-center items-center"></ul>
          </div>
      </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="note-text" class="col-form-label">Note:</label>
+            <textarea class="form-control shadow-2xl shadow-cyan-500 border-teal-700" id="note-text" placeholder="plz Write Here"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-close-btn" type="button" class="btn bg-opacity-80 bg-red-800" data-bs-dismiss="modal">Close</button>
+        <button id="modal-save-btn" type="button" class="btn bg-cyan-600">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     </main>
     <!-------Todo List Container-------->
     <main id="notelist-container" class="container pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto bg-opacity-80">
@@ -328,5 +353,7 @@
     </main>
  </main>
     <script src="Js/test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
