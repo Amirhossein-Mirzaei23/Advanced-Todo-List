@@ -729,6 +729,33 @@ const months = [
     "November",
     "December"
 ];
+calendarContainer.insertAdjacentHTML("beforeend",`
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="note-text" class="col-form-label">Note:</label>
+            <textarea class="form-control shadow-2xl shadow-cyan-500 border-teal-700" id="note-text" placeholder="plz Write Here"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-close-btn" type="button" class="btn bg-opacity-80 bg-red-800" data-bs-dismiss="modal">Close</button>
+        <button id="modal-save-btn" type="button" class="btn bg-cyan-600">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+`)
+
 
 //let =document.getElementById("")
 //let =document.getElementById("")
@@ -757,6 +784,8 @@ function showmodal(event){
  modalNoteInput.value=note
 
 }
+
+
 const calendarmanipulate=()=>{
 let firstDay=new Date(year,month).getDay()
 let lastDate=new Date(year,month+1,0).getDate()
