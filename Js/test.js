@@ -177,10 +177,13 @@ function deleteFromCatgory(e){
   let liElem=e.target.parentElement.parentElement.parentElement.parentElement
 
   if(liElem.tagName.toLowerCase()=="li"){
+   
     liElem.remove()
   }if(liElem.tagName.toLowerCase()=="menu"){
     liElem=e.target.parentElement.parentElement
+
     liElem.remove()
+    
   }
 
   
@@ -732,7 +735,7 @@ const months = [
 ];
 calendarContainer.insertAdjacentHTML("beforeend",`
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal max-sm:modal-sm fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
