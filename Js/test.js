@@ -106,11 +106,12 @@ function newCatgory(){
       let categoryTitle=document.createElement("span")
       let ul= document.createElement('ul')
       let randomNumber=Math.floor(Math.random()*100)
-      let dropDownSvg=`<svg id="svg${catgoryname}"  class="svg-icon float-right  transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg>`
+      let dropDownSvg=`<svg onclick="hideCatgoryItemTrigerdIcon(event)" id="svg${catgoryname}"  class="svg-icon float-right  transition-all" style="width: 1.35em; height: 1.35em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 511.976727C0 229.678545 229.725091 0 511.976727 0s511.976727 229.632 511.976727 511.976727c0 282.391273-229.725091 511.976727-511.976727 511.976727C229.725091 1024 0 794.368 0 511.976727M955.717818 511.976727c0-244.898909-199.121455-444.206545-443.741091-444.206545-244.666182 0-443.694545 199.307636-443.694545 444.206545 0 244.945455 199.121455 444.253091 443.694545 444.253091C756.642909 956.276364 955.717818 756.968727 955.717818 511.976727M230.027636 419.025455c0-6.562909 2.420364-13.102545 7.563636-18.059636 9.914182-9.960727 26.042182-9.960727 36.096 0l238.289455 236.916364L750.312727 401.105455c9.960727-9.914182 26.135273-9.914182 36.305455 0 9.914182 9.960727 9.914182 26.042182 0 35.956364L511.976727 709.678545 237.474909 436.922182C232.424727 432.104727 230.027636 425.588364 230.027636 419.025455"  /></svg>`
     
       categoryTitle.innerHTML=catgoryname
       ul.id=JSON.stringify(catgoryname+randomNumber)
       categoryElem.className="mt-1 text-center bg-catgory-t1 rounded-3xl "
+    
     
       categoryElem.insertAdjacentElement("afterbegin",ul)
      // categoryElem.insertAdjacentText('afterbegin',`${catgoryname}`)
@@ -193,11 +194,14 @@ function deleteFromCatgory(e){
 // hide category item by click on the Icon
 function hideCatgoryItem(e){
   let id=localStorage.getItem("key")
-  let svg=e.target.childNodes[1]
+  let svg
+ // console.log(e.target.tagName);
   let menu
+  let ul
   if (e.target.tagName==="DIV") {
     menu=e.target.parentElement
-    let ul=menu.childNodes[1]
+    svg=e.target.childNodes[1]
+    ul=menu.childNodes[1]
   if(ul.classList.contains("hidden")){
     ul.classList.remove("hidden")
     svg.classList.remove("rotate-180")
@@ -205,7 +209,20 @@ function hideCatgoryItem(e){
     ul.classList.add("hidden")
     svg.classList.add("rotate-180")}
   }
-  
+  console.log(e.target.tagName.toLowerCase());
+}
+function hideCatgoryItemTrigerdIcon(e){
+  if (e.target.tagName.toLowerCase()==="svg") {
+    menu=e.target.parentElement.parentElement
+    svg=e.target
+    ul=menu.childNodes[1]
+    if(ul.classList.contains("hidden")){
+      ul.classList.remove("hidden")
+      svg.classList.remove("rotate-180")
+    }else{
+      ul.classList.add("hidden")
+      svg.classList.add("rotate-180")}
+  }
   
 
 }
