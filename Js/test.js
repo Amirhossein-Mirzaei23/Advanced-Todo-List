@@ -7,9 +7,12 @@ window.addEventListener("load",()=>{
 })
 ////////////////////  Add and make Catgory part (variable and function)
 const body=document.querySelector("body")
-const mainBody=document.querySelector("main")
+
 let changethemeBtn=document.getElementById("themeBtn")
 let hideItemBtn=document.getElementById("hideBtn")
+
+const mainBody=document.querySelector("main")
+
 let categoriesDivElem=document.querySelector("#catgories")
 
 let addcategoryElem=document.getElementById("addcatgoryIcon")
@@ -144,7 +147,7 @@ console.log();
   }
     
   }
-/// add note to each category that selected by user
+// add note to each category that selected by user
 
 
 function addCatgoryWork(){
