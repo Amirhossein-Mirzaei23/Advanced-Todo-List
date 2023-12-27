@@ -23,7 +23,7 @@
   <!----App Container---->
  <main class="grid sm:grid-cols-3 max-sm:grid-cols-1 max-sm:gap-8 mt-3">
   <!-------Calender Container-------->
-    <main id="calander" class="max-sm:w-11/12 mx-auto h-68 max-h-64">
+    <main id="calander" class="max-sm:w-11/12 max-sm:mx-auto h-68 max-h-68">
       <div id="calendar-container" class="rounded-xl bg-slate-100 p-1 bg-opacity-80">
          <header id="calendar-header" class="flex items-center justify-between p-1">
              <p id="calendar-current-date" class="text-red-950"></p>
@@ -50,7 +50,7 @@
 
     </main>
     <!-------Todo List Container-------->
-    <main id="notelist-container" class="container pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto bg-opacity-80">
+    <main id="notelist-container" class="pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto bg-opacity-80">
       <div id="catgories">
         <div class="flex items-center bg-catgory-container-t1 py-2 px-1 rounded-lg" >
           <div id="addcatgoryIcon">
@@ -80,7 +80,7 @@
         </form>
     </main>
 <!-------Music Player Container-------->
-    <main id="music-container" class="w-11/12 h-72 px-1 bg-sky-800 bg-opacity-20 rounded-2xl max-sm:m-auto max-sm:mt-24 max-sm:hidden">
+    <main id="music-container" class="hidden h-72 px-1 bg-sky-800 bg-opacity-20 sm:m-auto rounded-2xl max-sm:w-9/12 max-sm:ml-12 max-sm:mt-72 max-sm:absolute">
 
       <audio src=""></audio>
 
@@ -329,7 +329,7 @@
        <span id="duration" class="float-right font-serif font-medium"></span>
     </div>
   </div>
-      
+      <button id="backToSelcetBoxBtn" class="hidden w-full rounded-b-lg rounded-t-sm px-2 bg-opacity-20 bg-red-600 mx-auto  hover:bg-opacity-60">Back to the select box</button>
     </main>
  </main>
     <script src="Js/test.js"></script>

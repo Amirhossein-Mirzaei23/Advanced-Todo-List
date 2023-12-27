@@ -1,15 +1,16 @@
 window.addEventListener("load",()=>{
  // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
  // alert("by single Double click on each item ,item will be deleted")
- alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
- alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
- alert(`And Welcome 🥳`)
+// alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+// alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
+// alert(`And Welcome 🥳`)
 })
 ////////////////////  Add and make Catgory part (variable and function)
 const body=document.querySelector("body")
 
 let changethemeBtn=document.getElementById("themeBtn")
 let hideItemBtn=document.getElementById("hideBtn")
+let menuBtn=document.getElementById("hamburgerMenu")
 
 const mainBody=document.querySelector("main")
 
@@ -98,7 +99,7 @@ function checkScreenWidth(){
     
   }}
   window.addEventListener("load",checkScreenWidth)
-//window.addEventListener("change",checkScreenWidth)
+
 // create and add new category
 function newCatgory(){
   let catgoryname=prompt("please enter the name of the catgory:",)
@@ -489,6 +490,18 @@ let isPlaying=false
 
 let songIndex=0;
 let musiclistElem=document.getElementById("music-listElem")
+
+////music part repansive constrol
+menuBtn.addEventListener("click",function(){
+  if (musicContainer.classList.contains("hidden")) {
+    musicContainer.classList.remove("hidden")
+    notelistContainer.classList.add("hidden")
+  } else {
+    musicContainer.classList.add("hidden")
+    notelistContainer.classList.remove("hidden")
+  }
+})
+
 const selectPlayListBox=document.getElementById("selectplaylistbox")
 //////////soundbox Icon
 const rockIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="Rock Icon"/>`
@@ -516,19 +529,24 @@ const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
 const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 /////hide and show the music list and playlist box
 function hidemusiclist(){
+  console.log(selectPlayListBox.childNodes);
+  console.log("musicElem:",musiclistElem.childNodes);
   if (selectPlayListBox.classList.contains("hidden")) {
     
     selectPlayListBox.classList.remove("hidden")
     musiclistElem.classList.add("hidden")
-   
+    backToMusicBoxBtn.classList.add("hidden")
   } else {
    
     selectPlayListBox.classList.add("hidden")
     musiclistElem.classList.remove("hidden")  
+    backToMusicBoxBtn.classList.remove("hidden")
   }
 }
 ///// set hide and show Element function to the musiclist and tthe olay list box
-musicContainer.addEventListener("dblclick",hidemusiclist)
+let backToMusicBoxBtn=document.getElementById("backToSelcetBoxBtn")
+
+backToMusicBoxBtn.addEventListener("click",hidemusiclist)
 selectPlayListBox.addEventListener("click",hidemusiclist)
 ///////////////create show icon function for seelct playslist box
 function setIcon(event){
