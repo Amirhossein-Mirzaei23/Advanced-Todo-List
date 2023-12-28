@@ -328,15 +328,14 @@ const songs = [
     displayName: "Html Padcast",
     artist: "Ozbi",
     id:1,
-    cover:
-      "https://images.genius.com/ee202c6f724ffd4cf61bd01a205eeb47.1000x1000x1.jpg",
+    time:"06:32"
   },
   {
     path: "music/Reza Pishro - Bache Bahala (320).mp3",
     displayName: "Bache Bahala",
     artist: "Reza Pishro",
     id:2,
-    cover: "images/peakpx.jpg",
+    time:"03:27"
   },
   {
     path:
@@ -344,7 +343,7 @@ const songs = [
     displayName: "rain",
     artist: "rain and tunder",
     id:3,
- 
+    time:"06:32"
   },
   {
   path:
@@ -352,55 +351,69 @@ const songs = [
 displayName: "Another World",
 artist: "IDK?",
 id:4,
-  
+time:"04:24"
 },{
 path:
 "https://dl2.hitseda.com/Music/ak/nab-selections/Aaron%20-%20U-Turn%20%28Lili%29.mp3",
 displayName: "U-Turn( liliy)",
 artist: "Aoran",
 id:5,
-
+time:"03:24"
 },
 { path:
 "https://dl2.hitseda.com/Music/ak/nab-selections/CHRIS%20DE%20BURGH%20-The%20Last%20Time%20I%20Cried.mp3",
 displayName: "The Last Time I Cried",
 artist: "CHRIS DE BURGH",
-id:6},
+id:6,
+time:"05:34"
+},
 { path:
   "https://dl2.hitseda.com/Music/ak/nab-selections/Flori%20Mumajesi%20-%20Ku%20isha%20une.mp3",
   displayName: "Ku isha une",
   artist: "Flori Mumajesi & Argjentina",
-  id:7}, 
+  id:7,
+  time:"03:17"
+}, 
  {path:
 "https://v.delgarm.com/mp3/828/2021/01/12/82089ea02b9842c4178b03c829247070.mp3",
 displayName: "rain",
 artist: "rain and tunder",
-id:8},
+id:8,
+time:"06:32"
+},
 {
 path:
 "https://dl2.hitseda.com/Music/bm/021/khareji/rock/1/01.%20-%20Another%20World_766.mp3",
 displayName: "Another World",
 artist: "IDK?",
-id:9},{
+id:9,
+time:"04:24"
+},{
 path:
 "https://dl2.hitseda.com/Music/ak/nab-selections/Aaron%20-%20U-Turn%20%28Lili%29.mp3",
 displayName: "U-Turn( liliy)",
 artist: "Aoran",
-id:10},
+id:10,
+time:"03:50"
+},
 { path:
 "https://dl2.hitseda.com/Music/ak/nab-selections/CHRIS%20DE%20BURGH%20-The%20Last%20Time%20I%20Cried.mp3",
 displayName: "The Last Time I Cried",
 artist: "CHRIS DE BURGH",
-id:11},
+id:11,
+time:"05:34"
+},
 
 { path:
 "https://dl2.hitseda.com/Music/ak/nab-selections/Flori%20Mumajesi%20-%20Ku%20isha%20une.mp3",
 displayName: "Ku isha une",
 artist: "Flori Mumajesi & Argjentina",
-id:12},
+id:12,
+time:"03:17"
+},
 
 
-
+///////
 
 { path:"https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3",
 displayName: "mandoline",
@@ -477,7 +490,7 @@ songs.forEach(object=>{
 
   musiclist.insertAdjacentHTML("beforeend",` <li id=${object.id} class="mt-1 w-full h-10 bg-orange-400  grid grid-cols-2 px-2 rounded-xl hover:scale-105 hover:-py-1">
             
-  <div class="flex items-center">00:00</div>
+  <div class="flex items-center">${object.time}</div>
   <div class="px-1">
      <h1 class=" font-serif text-sm overflow-hidden whitespace-nowrap">${object.displayName}</h1>
      <h4 class="float-right font-serif text-xs overflow-hidden whitespace-nowrap">${object.artist}</h4>
@@ -525,12 +538,6 @@ menuBtn.addEventListener("click",function(){
       console.log( musicContainer.style.opacity);
       console.log("a");
     }
-   // if (musicContainer.style.opacity<=0) {
-   //   musicContainer.style.opacity=0
-   //   clearInterval()
-   // }else{
-   //   setInterval(fadeIn, 1000);
-   // }
   }
 })
 
@@ -604,6 +611,7 @@ selectPlayListBox.childNodes.forEach((child)=>{
 }
 setAddEventListener()
 ////// music controller func
+let audioOnPalyAnimation=``
 function loadSong(song) {
     audio.src = song.path;
     musiclist.childNodes.forEach(child=>{
@@ -615,6 +623,7 @@ function loadSong(song) {
      }
      let songOnPlay=document.getElementById(song.id)
      songOnPlay.classList.add("bg-opacity-40")
+   //  songOnPlay.appendChild()
     })
   }
   ///song information dispaly
