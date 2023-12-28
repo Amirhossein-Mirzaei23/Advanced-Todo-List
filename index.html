@@ -53,7 +53,7 @@
     <main id="notelist-container" class="pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto bg-opacity-80">
       <div id="catgories">
         <div class="flex items-center bg-catgory-container-t1 py-2 px-1 rounded-lg" >
-          <div id="addcatgoryIcon">
+          <div id="addcatgoryIcon" data-bs-toggle="modal" data-bs-target="#moadalcategory">
             <p class="float-left text-lg">Add New Catgory</p>
             <!---add category Icon--->
             <?xml version="1.0" ?><svg class="float-right w-1/12" id="plus-add-more-detail" style="enable-background:new 0 0 15 15;" version="1.1" viewBox="0 0 15 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z"/><polygon points="8,3.5 7,3.5 7,7 3.5,7 3.5,8 7,8 7,11.5 8,11.5 8,8 11.5,8 11.5,7 8,7 "/></svg></div>
@@ -65,7 +65,7 @@
               
             <input type="text" class="form-control m-auto" name="add" placeholder="Write Here!" id="input"/>
             
-            <div class=" flex mx-auto justify-items-center w-11/12 h-2 round-lg ">
+            <div class="flex mx-auto justify-items-center w-11/12 h-2 round-lg">
               <div id="RGBdiv1" class="w-4/12 rounded-s-lg"></div>
               <div id="RGBdiv2" class="w-4/12 "></div>
               <div id="RGBdiv3" class="w-4/12 rounded-e-lg"></div>
@@ -78,9 +78,34 @@
             Drag Here
         </label>
         </form>
+
+<!-- Modal -->
+<div class="modal max-sm:modal-sm fade" id="moadalcategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="note-text" class="col-form-label">Category Name: </label>
+            <br>
+            <input id="category-modal-inputElem" class="ml-5 p-1 rounded-lg border-2 border-b-teal-600 shadow-2xl shadow-cyan-500 border-teal-700" type="text" placeholder="write here!">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="category-modal-close-btn" type="button" class="btn bg-opacity-80 bg-red-800" data-bs-dismiss="modal">Close</button>
+        <button id="category-modal-save-btn" type="button" class="btn bg-cyan-600">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     </main>
 <!-------Music Player Container-------->
-    <main id="music-container" class="hidden h-72 px-1 bg-sky-800 bg-opacity-20 sm:m-auto rounded-2xl max-sm:w-9/12 max-sm:ml-12 max-sm:mt-72 max-sm:absolute">
+    <main id="music-container" class="max-sm:hidden w-11/12 h-72 px-1 bg-sky-800 bg-opacity-20 sm:m-auto rounded-2xl max-sm:w-9/12 max-sm:ml-12 max-sm:mt-72 max-sm:absolute">
 
       <audio src=""></audio>
 
@@ -93,7 +118,7 @@
        
       </div>
 
-      <div id="music-controller" class=" flex justify-center items-center w-5/6 h-1/6 mx-auto mt-1">
+      <div id="music-controller" class="flex justify-center items-center w-5/6 h-1/6 mx-auto mt-1">
         <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:scale-90 hover:text-sky-950" id="prev" >
             <!--prev-->
             <?xml version="1.0" encoding="UTF-8" standalone="no"?>

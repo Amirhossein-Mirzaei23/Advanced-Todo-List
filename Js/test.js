@@ -1,10 +1,10 @@
-window.addEventListener("load",()=>{
- // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
- // alert("by single Double click on each item ,item will be deleted")
-  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
-  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
-  alert(`And Welcome 🥳`)
-})
+//window.addEventListener("load",()=>{
+// // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
+// // alert("by single Double click on each item ,item will be deleted")
+//  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+//  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
+//  alert(`And Welcome 🥳`)
+//})
 ////////////////////  Add and make Catgory part (variable and function)
 const body=document.querySelector("body")
 
@@ -74,8 +74,16 @@ function hideAll(){
   notelistContainer.style.animation="goIn 2s 200ms"
   musicContainer.style.animation="goIn 2s 400ms"
 }}
+//// create a function fo first animation which show when user open the website
+function openAppAnimation(){
+  calendarContainer.style.animation="backIn 2s"
+  notelistContainer.style.animation="backIn 2s 200ms"
+  musicContainer.style.animation="backIn 2s 400ms"
 
-  
+  mainBody.style.animation="show 2s linear"
+  mainBody.style.opacity="100%"
+}
+  openAppAnimation()
 //// functions for set replacement svg to addBtn and dragItmem Btn
 function setLabelIcon(e){
   let targetLabel=e.target
@@ -101,9 +109,18 @@ function checkScreenWidth(){
   window.addEventListener("load",checkScreenWidth)
 
 // create and add new category
+let categoryModalInputElem=document.getElementById("category-modal-inputElem")
+let categoryModalSaveBtn=document.getElementById("category-modal-save-btn")
+console.log(categoryModalInputElem);
 function newCatgory(){
-  let catgoryname=prompt("please enter the name of the catgory:",)
+  ///prompt("please enter the name of the catgory:",)
+  let catgoryname=null
 
+  categoryModalInputElem.addEventListener("keyup",function(){
+    catgoryname=modalNoteInput.value
+  console.log(catgoryname);
+  })
+  console.log(catgoryname);
     if(catgoryname){
     
       let categoryElem=document.createElement("menu")
@@ -123,7 +140,7 @@ function newCatgory(){
       categoriesDivElem.insertAdjacentElement("beforeend",categoryElem)
       localStorage.setItem("key",`${ul.id}`)
     }else{
-      alert("pealse enter category name")
+   //   alert("pealse enter category name")
     }
 }
 
@@ -233,7 +250,8 @@ function hideCatgoryItemTrigerdIcon(e){
 
 /// set function to html element
 
-addcategoryElem.addEventListener("click",newCatgory)
+//addcategoryElem.addEventListener("click",newCatgory)
+categoryModalSaveBtn.addEventListener("click",addCatgoryWork)
 addNoteBtn.addEventListener("click",addCatgoryWork)
 //addLabel
 form.addEventListener("submit",function(event){
@@ -493,12 +511,25 @@ let musiclistElem=document.getElementById("music-listElem")
 
 ////music part repansive constrol
 menuBtn.addEventListener("click",function(){
-  if (musicContainer.classList.contains("hidden")) {
-    musicContainer.classList.remove("hidden")
+  if (musicContainer.classList.contains("max-sm:hidden")) {
+    musicContainer.classList.remove("max-sm:hidden")
     notelistContainer.classList.add("hidden")
+
   } else {
-    musicContainer.classList.add("hidden")
+    musicContainer.classList.add("max-sm:hidden")
     notelistContainer.classList.remove("hidden")
+
+    function fadeIn(){
+      musicContainer.style.opacity+=-0.1
+      console.log( musicContainer.style.opacity);
+      console.log("a");
+    }
+   // if (musicContainer.style.opacity<=0) {
+   //   musicContainer.style.opacity=0
+   //   clearInterval()
+   // }else{
+   //   setInterval(fadeIn, 1000);
+   // }
   }
 })
 
@@ -529,8 +560,6 @@ const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
 const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 /////hide and show the music list and playlist box
 function hidemusiclist(){
-  console.log(selectPlayListBox.childNodes);
-  console.log("musicElem:",musiclistElem.childNodes);
   if (selectPlayListBox.classList.contains("hidden")) {
     
     selectPlayListBox.classList.remove("hidden")
@@ -799,8 +828,6 @@ calendarContainer.insertAdjacentHTML("beforeend",`
 `)
 
 
-//let =document.getElementById("")
-//let =document.getElementById("")
 let modalTitle=document.getElementById("exampleModalLabel")
 let modalNoteInput=document.getElementById("note-text")
 let modalCloseBtn=document.getElementById("modal-close-btn")
