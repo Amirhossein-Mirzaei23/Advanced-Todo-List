@@ -111,16 +111,16 @@ function checkScreenWidth(){
 // create and add new category
 let categoryModalInputElem=document.getElementById("category-modal-inputElem")
 let categoryModalSaveBtn=document.getElementById("category-modal-save-btn")
-console.log(categoryModalInputElem);
-function newCatgory(){
-  ///prompt("please enter the name of the catgory:",)
-  let catgoryname=null
 
-  categoryModalInputElem.addEventListener("keyup",function(){
-    catgoryname=modalNoteInput.value
-  console.log(catgoryname);
-  })
-  console.log(catgoryname);
+/// define a vaiable to save the categry modal value
+let catgoryname
+categoryModalInputElem.addEventListener("keyup",()=>{
+   catgoryname=categoryModalInputElem.value
+  
+})
+/////////a functio to create and add a note category as new item to the todolist
+ function newCatgory(){
+    console.log(catgoryname);
     if(catgoryname){
     
       let categoryElem=document.createElement("menu")
@@ -139,8 +139,9 @@ function newCatgory(){
       categoryElem.insertAdjacentHTML("afterbegin",`<div id="dropdownBtn" onclick="hideCatgoryItem(event)" class="text-center bg-state-800 w-full mt-px mx-auto -translate-x-3">${catgoryname} ${dropDownSvg}</div>`)
       categoriesDivElem.insertAdjacentElement("beforeend",categoryElem)
       localStorage.setItem("key",`${ul.id}`)
+      categoryModalInputElem.value=""
     }else{
-   //   alert("pealse enter category name")
+      alert("pealse enter category name")
     }
 }
 
@@ -251,7 +252,7 @@ function hideCatgoryItemTrigerdIcon(e){
 /// set function to html element
 
 //addcategoryElem.addEventListener("click",newCatgory)
-categoryModalSaveBtn.addEventListener("click",addCatgoryWork)
+categoryModalSaveBtn.addEventListener("click",newCatgory)
 addNoteBtn.addEventListener("click",addCatgoryWork)
 //addLabel
 form.addEventListener("submit",function(event){
@@ -819,7 +820,7 @@ calendarContainer.insertAdjacentHTML("beforeend",`
       </div>
       <div class="modal-footer">
         <button id="modal-close-btn" type="button" class="btn bg-opacity-80 bg-red-800" data-bs-dismiss="modal">Close</button>
-        <button id="modal-save-btn" type="button" class="btn bg-cyan-600">Save changes</button>
+        <button id="modal-save-btn" type="button" class="btn bg-cyan-600" data-bs-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>
