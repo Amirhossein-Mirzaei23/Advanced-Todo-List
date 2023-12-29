@@ -7,10 +7,11 @@ body {
     min-height: 100vh;
     padding: 0 10px;
     background-repeat:no-repeat;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     background-attachment: fixed;
-  
+    
+   
 }
 .bg-catgory-container-t1{
     background-color: #BEADFA;
