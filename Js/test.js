@@ -155,7 +155,7 @@ background-repeat:no-repeat;
 `
 ////////// category selection to add note
 function selectionsCatgory(e){
-console.log();
+
   if( e.target.parentElement.tagName.toLowerCase() =="menu"){
    let selectedCategory=e.target.parentElement
          let categoryID=selectedCategory.childNodes[1].id
