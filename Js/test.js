@@ -174,8 +174,7 @@ function selectionsCatgory(e){
   }
     
   }
-// add note to each category that selected by user
-
+// add note to each category which selected by user
 
 function addCatgoryWork(){
   let notevalue=input.value
