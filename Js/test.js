@@ -148,7 +148,7 @@ categoryModalInputElem.addEventListener("keyup",()=>{
 let modalContianer=document.getElementById("categorymodalbackground")
 modalContianer.style.cssText=`
 background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-background_52683-61842.jpg?w=740&t=st=1703829926~exp=1703830526~hmac=2d4c904168c12148fb243aab5616b596f2deb22361359aed5c88c1bcd140f02d');
-background-size: 500px;
+background-size: 650px;
 filter: blur(0.2px);
 background-position: center;
 background-repeat:no-repeat;
