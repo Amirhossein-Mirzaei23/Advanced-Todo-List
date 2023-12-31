@@ -492,7 +492,7 @@ this.artist=artist
 
 
 }
-
+//// a methods to create music playlist in music contianer part 
 songs.forEach(object=>{
 
   musiclist.insertAdjacentHTML("beforeend",` <li id=${object.id} class="mt-1 w-full h-10 bg-orange-400  grid grid-cols-2 px-2 rounded-xl hover:scale-105 hover:-py-1">
