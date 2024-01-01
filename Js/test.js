@@ -206,8 +206,7 @@ function addCatgoryWork(){
       li.className="mt-1 text-center decoration-double decoration-stone-200 decoration-2 font-serif bg-li-t1 rounded-b-xl hover:opacity-80 hover:-translate-x-5 hover:scale-110 hover:capitalize transition-all"
       li.innerHTML=notevalue
   
-      li.insertAdjacentHTML("beforeend",`<button id="ulReycleBin" class="my-2 m-2 hover:scale-125 float-right" onclick="deleteFromCatgory(event)">
-      $</button>`)
+   
       li.insertAdjacentHTML("beforeend",`<button id="thickIcon" class="my-2 m-2 hover:scale-125 float-right" onclick="deleteFromCatgory(event)">
       ${deleteNoteSvg}</button>`)
 
