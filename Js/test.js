@@ -548,11 +548,34 @@ let audioBtn=document.getElementById("play")
 let playingSvg=document.getElementById("playSvg")
 let pauseSvg=document.getElementById("pauseSvg")
 let audio=document.querySelector("audio")
+let volumeBtn=document.getElementById("musicVolumeBtn")
 let isPlaying=false
-
+audio.volume=0.1
 let songIndex=0;
 let musiclistElem=document.getElementById("music-listElem")
+//////////////// create a function for music Volume
+const toast=document.getElementById("liveToast")
+const toastHeader=document.getElementById("toast-header")
+toastHeader.style.cssText=`
+background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-background_52683-61842.jpg?w=740&t=st=1703829926~exp=1703830526~hmac=2d4c904168c12148fb243aab5616b596f2deb22361359aed5c88c1bcd140f02d');
+background-size: 350px;
+filter: blur(0.2px);
+background-position: bottom;
+background-repeat:no-repeat;`
 
+volumeBtn.addEventListener("click",function(){
+toast.classList.contains("show")? toast.className="toast hide" : toast.className="toast show";
+setInterval(function() {
+  toast.parentElement.style.opacity+= -0.05
+}, 1000);
+})
+volumeBtn.addEventListener("wheel",(event)=>{
+
+audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("v");;
+if(audio.volume<=0.01) audio.volume=0.02
+if(audio.volume>=0.99) audio.volume=0.98
+
+})
 ////music part repansive constrol
 menuBtn.addEventListener("click",function(){
   if (musicContainer.classList.contains("max-sm:hidden")) {

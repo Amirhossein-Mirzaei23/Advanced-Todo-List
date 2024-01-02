@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/9099/9099168.png">
     <title>Todo LList</title>
+    
 </head>
 <body>
 
@@ -355,12 +356,25 @@
        <span id="duration" class="float-right font-serif font-medium"></span>
     </div>
   </div>
+  <button id="musicVolumeBtn" class="btn btn-info mx-auto mt-2" type="button" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">wheel</button>
     <button id="backToSelcetBoxBtn" class="hidden w-full rounded-b-lg rounded-t-sm px-2 bg-opacity-20 bg-red-600 mx-auto  hover:bg-opacity-60">Back to the select box</button>
-   <img class="" src="">
+
   </main>
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header h-12" id="toast-header">
+      
+      </div>
+      <div class="toast-body">
+        use mouse wheel to control music volume!
+      </div>
+    </div>
+  </div>
  </main>
     <script src="Js/test.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
 </body>
 </html>
