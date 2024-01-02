@@ -52,7 +52,7 @@
 
     </main>
     <!-------Todo List Container-------->
-    <main id="notelist-container" class="pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:11/12  mx-auto bg-opacity-80">
+    <main id="notelist-container" class="pt-3 px-3 pb-4 rounded-lg flex-col items-center bg-sky-800 w-10/12  lg:w-10/12 xl:w-11/12  mx-auto bg-opacity-80">
       <div id="catgories">
         <div class="flex items-center bg-catgory-container-t1 py-2 px-1 rounded-lg" >
           <div id="addcatgoryIcon" data-bs-toggle="modal" data-bs-target="#moadalcategory">
@@ -107,11 +107,11 @@
 </div>
     </main>
 <!-------Music Player Container-------->
-    <main id="music-container" class="max-sm:hidden w-11/12 h-72 px-1 bg-sky-800 bg-opacity-20 sm:m-auto rounded-2xl max-sm:w-9/12 max-sm:ml-12 max-sm:mt-72 max-sm:absolute">
+    <main id="music-container" class="max-sm:hidden w-11/12 h-80 px-1 bg-sky-800 bg-opacity-20 sm:mx-auto rounded-2xl max-sm:w-9/12 max-sm:ml-12 max-sm:mt-72 max-sm:absolute">
 
       <audio src=""></audio>
 
-      <div id="music-listElem" class="hidden mx-auto pb-1 w-11/12 h-4/6 overflow-y-scroll rounded-2xl">
+      <div id="music-listElem" class="hidden mx-auto pb-1 w-11/12 h-3/6 overflow-y-scroll rounded-2xl">
         <div class="bg-red-800" id="scroll"></div>
 
         <ul id="musiclist" class="bg-slate-400 bg-opacity-40 rounded-xl p-2 overflow-hidden"></ul></div>
@@ -121,231 +121,234 @@
       </div>
 
       <div id="music-controller" class="flex justify-center items-center w-5/6 h-1/6 mx-auto mt-1">
-        <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:scale-90 hover:text-sky-950" id="prev" >
-            <!--prev-->
-            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-            <!-- Created with Inkscape (http://www.inkscape.org/) -->
-        
-            <svg
-               xmlns:dc="http://purl.org/dc/elements/1.1/"
-               xmlns:cc="http://creativecommons.org/ns#"
-               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns="http://www.w3.org/2000/svg"
-               xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-               xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-               width="32"
-               height="32"
-               viewBox="0 0 5.8208332 5.8208335"
-               version="1.1"
-               id="svg8"
-               inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-               sodipodi:docname="go-previous.svg">
-              <defs
-                 id="defs2" />
-              <sodipodi:namedview
-                 id="base"
-                 pagecolor="#ffffff"
-                 bordercolor="#666666"
-                 borderopacity="1.0"
-                 inkscape:pageopacity="0.0"
-                 inkscape:pageshadow="2"
-                 inkscape:zoom="11.313708"
-                 inkscape:cx="7.8305055"
-                 inkscape:cy="11.593276"
-                 inkscape:document-units="mm"
-                 inkscape:current-layer="layer1"
-                 showgrid="true"
-                 units="px"
-                 inkscape:window-width="1360"
-                 inkscape:window-height="718"
-                 inkscape:window-x="0"
-                 inkscape:window-y="24"
-                 inkscape:window-maximized="1">
-                <inkscape:grid
-                   type="xygrid"
-                   id="grid10" />
-              </sodipodi:namedview>
-              <metadata
-                 id="metadata5">
-                <rdf:RDF>
-                  <cc:Work
-                     rdf:about="">
-                    <dc:format>image/svg+xml</dc:format>
-                    <dc:type
-                       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                    <dc:title></dc:title>
-                  </cc:Work>
-                </rdf:RDF>
-              </metadata>
-              <g
-                 inkscape:label="Capa 1"
-                 inkscape:groupmode="layer"
-                 id="layer1"
-                 transform="translate(0,-291.17915)">
-                <path
-                   style="fill:none;stroke:#1d4ec1;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-                   d="m 2.9104167,292.23748 -2.11666671,1.85209 2.11666661,2.11666"
-                   id="path12"
-                   inkscape:connector-curvature="0"
-                   sodipodi:nodetypes="ccc" />
-                <path
-                   sodipodi:nodetypes="ccc"
-                   inkscape:connector-curvature="0"
-                   id="path822"
-                   d="M 5.2916667,292.23748 3.175,294.08957 l 2.1166666,2.11666"
-                   style="fill:none;stroke:#e94a4a;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52147239" />
+
+    <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:scale-90 hover:text-sky-950" id="prev" >
+      <!--prev-->
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <!-- Created with Inkscape (http://www.inkscape.org/) -->
+  
+      <svg
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cc="http://creativecommons.org/ns#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+         width="32"
+         height="32"
+         viewBox="0 0 5.8208332 5.8208335"
+         version="1.1"
+         id="svg8"
+         inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+         sodipodi:docname="go-previous.svg">
+        <defs
+           id="defs2" />
+        <sodipodi:namedview
+           id="base"
+           pagecolor="#ffffff"
+           bordercolor="#666666"
+           borderopacity="1.0"
+           inkscape:pageopacity="0.0"
+           inkscape:pageshadow="2"
+           inkscape:zoom="11.313708"
+           inkscape:cx="7.8305055"
+           inkscape:cy="11.593276"
+           inkscape:document-units="mm"
+           inkscape:current-layer="layer1"
+           showgrid="true"
+           units="px"
+           inkscape:window-width="1360"
+           inkscape:window-height="718"
+           inkscape:window-x="0"
+           inkscape:window-y="24"
+           inkscape:window-maximized="1">
+          <inkscape:grid
+             type="xygrid"
+             id="grid10" />
+        </sodipodi:namedview>
+        <metadata
+           id="metadata5">
+          <rdf:RDF>
+            <cc:Work
+               rdf:about="">
+              <dc:format>image/svg+xml</dc:format>
+              <dc:type
+                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              <dc:title></dc:title>
+            </cc:Work>
+          </rdf:RDF>
+        </metadata>
+        <g
+           inkscape:label="Capa 1"
+           inkscape:groupmode="layer"
+           id="layer1"
+           transform="translate(0,-291.17915)">
+          <path
+             style="fill:none;stroke:#1d4ec1;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             d="m 2.9104167,292.23748 -2.11666671,1.85209 2.11666661,2.11666"
+             id="path12"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="ccc" />
+          <path
+             sodipodi:nodetypes="ccc"
+             inkscape:connector-curvature="0"
+             id="path822"
+             d="M 5.2916667,292.23748 3.175,294.08957 l 2.1166666,2.11666"
+             style="fill:none;stroke:#e94a4a;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52147239" />
+        </g>
+      </svg>
+      
+  </button>
+  
+  <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:text-sky-950" id="play">
+      <!--play-->
+      <?xml version="1.0" encoding="iso-8859-1"?>
+      <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+      <svg class="scale-125" id="playSvg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           width="30px" height="30px" viewBox="0 0 65.797 65.797" style="enable-background:new 0 0 65.797 65.797;"
+           xml:space="preserve">
+      <g>
+          <g>
+              <g>
+                  <path d="M12.182,65.797c-4.089,0-6.868-3.285-6.868-8.174V8.174C5.313,3.285,8.092,0,12.184,0c1.563,0,3.213,0.485,4.87,1.441
+                      l38.924,24.77c2.877,1.659,4.506,4.052,4.506,6.691c0,2.639-1.62,5.027-4.566,6.729L17.125,64.312
+                      C15.394,65.312,13.746,65.797,12.182,65.797z M12.184,4.001c-2.563,0-2.87,2.919-2.87,4.174v49.449
+                      c0,1.255,0.308,4.174,2.868,4.174c0.84,0,1.843-0.313,2.87-0.905l38.788-24.68c1.705-0.986,2.646-2.177,2.646-3.309
+                      c0-1.135-0.937-2.328-2.573-3.272L14.979,4.862C14.025,4.314,13.024,4.001,12.184,4.001z"/>
               </g>
-            </svg>
-            
-        </button>
-        
-        <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:text-sky-950" id="play">
-            <!--play-->
-            <?xml version="1.0" encoding="iso-8859-1"?>
-            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-            <svg class="scale-125" id="playSvg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 width="30px" height="30px" viewBox="0 0 65.797 65.797" style="enable-background:new 0 0 65.797 65.797;"
-                 xml:space="preserve">
-            <g>
-                <g>
-                    <g>
-                        <path d="M12.182,65.797c-4.089,0-6.868-3.285-6.868-8.174V8.174C5.313,3.285,8.092,0,12.184,0c1.563,0,3.213,0.485,4.87,1.441
-                            l38.924,24.77c2.877,1.659,4.506,4.052,4.506,6.691c0,2.639-1.62,5.027-4.566,6.729L17.125,64.312
-                            C15.394,65.312,13.746,65.797,12.182,65.797z M12.184,4.001c-2.563,0-2.87,2.919-2.87,4.174v49.449
-                            c0,1.255,0.308,4.174,2.868,4.174c0.84,0,1.843-0.313,2.87-0.905l38.788-24.68c1.705-0.986,2.646-2.177,2.646-3.309
-                            c0-1.135-0.937-2.328-2.573-3.272L14.979,4.862C14.025,4.314,13.024,4.001,12.184,4.001z"/>
-                    </g>
-                    <g>
-                        <g>
-                            <path d="M32.062,45.854c-0.333,0-0.657-0.164-0.848-0.468c-0.294-0.467-0.153-1.084,0.313-1.379l0.54-0.34
-                                c0.468-0.293,1.085-0.153,1.379,0.313c0.295,0.467,0.154,1.084-0.313,1.379l-0.54,0.34
-                                C32.427,45.805,32.244,45.854,32.062,45.854z"/>
-                        </g>
-                        <g>
-                            <path d="M17.413,55.068c-0.333,0-0.657-0.166-0.848-0.469c-0.294-0.467-0.153-1.084,0.314-1.379l11.223-7.06
-                                c0.467-0.292,1.084-0.154,1.379,0.313c0.294,0.467,0.153,1.086-0.314,1.379l-11.223,7.061
-                                C17.778,55.018,17.593,55.068,17.413,55.068z"/>
-                        </g>
-                    </g>
-                </g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            </svg>
-            <!--pause --  -->
-            <?xml version="1.0" ?>
-            <svg id="pauseSvg" class="hidden scale-75" style="enable-background:new 0 0 100 100;" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_7_copy"><path d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z"/><path d="M68.109,72.821h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.082c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C72.049,71.057,70.285,72.821,68.109,72.821z"/><path d="M40.489,27.248c0.769,0.719,1.257,1.735,1.257,2.871v37.799c0,2.176-1.764,3.94-3.94,3.94h-8.915   c-0.234,0-0.46-0.03-0.683-0.069c0.704,0.658,1.643,1.069,2.683,1.069h8.915c2.176,0,3.94-1.764,3.94-3.94V31.119   C43.746,29.177,42.338,27.573,40.489,27.248z"/><path d="M68.792,27.211c0.769,0.719,1.257,1.735,1.257,2.871v37.799c0,2.176-1.764,3.94-3.94,3.94h-8.915   c-0.234,0-0.46-0.03-0.683-0.069c0.704,0.658,1.643,1.069,2.683,1.069h8.915c2.176,0,3.94-1.764,3.94-3.94V31.082   C72.049,29.14,70.641,27.535,68.792,27.211z"/><path d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119   c0-2.176,1.764-3.94,3.94-3.94h8.915c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z" style="fill:none;stroke:#000000;stroke-miterlimit:10;"/><path d="M68.109,72.821h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.082   c0-2.176,1.764-3.94,3.94-3.94h8.915c2.176,0,3.94,1.764,3.94,3.94v37.799C72.049,71.057,70.285,72.821,68.109,72.821z" style="fill:none;stroke:#000000;stroke-miterlimit:10;"/></g></svg>
-         </button>
-        <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:scale-90 hover:text-sky-950" id="next">
-            <!--next-->
-            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-            <!-- Created with Inkscape (http://www.inkscape.org/) -->
-            <svg
-               xmlns:dc="http://purl.org/dc/elements/1.1/"
-               xmlns:cc="http://creativecommons.org/ns#"
-               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-               xmlns:svg="http://www.w3.org/2000/svg"
-               xmlns="http://www.w3.org/2000/svg"
-               xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-               xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-               width="32"
-               height="32"
-               viewBox="0 0 5.8208332 5.8208335"
-               version="1.1"
-               id="svg8"
-               inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-               sodipodi:docname="go-next.svg">
-              <defs
-                 id="defs2" />
-              <sodipodi:namedview>
-                 id="base"
-                 pagecolor="#ffffff"
-                 bordercolor="#666666"
-                 borderopacity="1.0"
-                 inkscape:pageopacity="0.0"
-                 inkscape:pageshadow="2"
-                 inkscape:zoom="8"
-                 inkscape:cx="17.486803"
-                 inkscape:cy="2.7831783"
-                 inkscape:document-units="mm"
-                 inkscape:current-layer="layer1"
-                 showgrid="true"
-                 units="px"
-                 inkscape:window-width="1360"
-                 inkscape:window-height="718"
-                 inkscape:window-x="0"
-                 inkscape:window-y="24"
-                 inkscape:window-maximized="1">
-                <inkscape:grid
-                   type="xygrid"
-                   id="grid10" />
-              </sodipodi:namedview>
-              <metadata
-                 id="metadata5">
-                <rdf:RDF>
-                  <cc:Work
-                     rdf:about="">
-                    <dc:format>image/svg+xml</dc:format>
-                    <dc:type
-                       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                    <dc:title></dc:title>
-                  </cc:Work>
-                </rdf:RDF>
-              </metadata>
-              <g
-                 inkscape:label="Capa 1"
-                 inkscape:groupmode="layer"
-                 id="layer1"
-                 transform="translate(0,-291.17915)">
-                <g
-                   id="g856"
-                   transform="matrix(-1,0,0,1,5.9389926,0)">
-                  <path
-                     sodipodi:nodetypes="ccc"
-                     inkscape:connector-curvature="0"
-                     id="path12"
-                     d="m 2.9104167,292.23748 -2.11666671,1.85209 2.11666661,2.11666"
-                     style="fill:none;stroke:#1d4ec1;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-                  <path
-                     style="fill:none;stroke:#e94a4a;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52147241"
-                     d="M 5.2916667,292.23748 3.175,294.08957 l 2.1166666,2.11666"
-                     id="path822"
-                     inkscape:connector-curvature="0"
-                     sodipodi:nodetypes="ccc" />
-                </g>
+              <g>
+                  <g>
+                      <path d="M32.062,45.854c-0.333,0-0.657-0.164-0.848-0.468c-0.294-0.467-0.153-1.084,0.313-1.379l0.54-0.34
+                          c0.468-0.293,1.085-0.153,1.379,0.313c0.295,0.467,0.154,1.084-0.313,1.379l-0.54,0.34
+                          C32.427,45.805,32.244,45.854,32.062,45.854z"/>
+                  </g>
+                  <g>
+                      <path d="M17.413,55.068c-0.333,0-0.657-0.166-0.848-0.469c-0.294-0.467-0.153-1.084,0.314-1.379l11.223-7.06
+                          c0.467-0.292,1.084-0.154,1.379,0.313c0.294,0.467,0.153,1.086-0.314,1.379l-11.223,7.061
+                          C17.778,55.018,17.593,55.068,17.413,55.068z"/>
+                  </g>
               </g>
-            </svg>            
-        </button>
+          </g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      </svg>
+      <!--pause --  -->
+      <?xml version="1.0" ?>
+      <svg id="pauseSvg" class="hidden scale-75" style="enable-background:new 0 0 100 100;" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_7_copy"><path d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z"/><path d="M68.109,72.821h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.082c0-2.176,1.764-3.94,3.94-3.94h8.915   c2.176,0,3.94,1.764,3.94,3.94v37.799C72.049,71.057,70.285,72.821,68.109,72.821z"/><path d="M40.489,27.248c0.769,0.719,1.257,1.735,1.257,2.871v37.799c0,2.176-1.764,3.94-3.94,3.94h-8.915   c-0.234,0-0.46-0.03-0.683-0.069c0.704,0.658,1.643,1.069,2.683,1.069h8.915c2.176,0,3.94-1.764,3.94-3.94V31.119   C43.746,29.177,42.338,27.573,40.489,27.248z"/><path d="M68.792,27.211c0.769,0.719,1.257,1.735,1.257,2.871v37.799c0,2.176-1.764,3.94-3.94,3.94h-8.915   c-0.234,0-0.46-0.03-0.683-0.069c0.704,0.658,1.643,1.069,2.683,1.069h8.915c2.176,0,3.94-1.764,3.94-3.94V31.082   C72.049,29.14,70.641,27.535,68.792,27.211z"/><path d="M39.806,72.858h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.119   c0-2.176,1.764-3.94,3.94-3.94h8.915c2.176,0,3.94,1.764,3.94,3.94v37.799C43.746,71.094,41.982,72.858,39.806,72.858z" style="fill:none;stroke:#000000;stroke-miterlimit:10;"/><path d="M68.109,72.821h-8.915c-2.176,0-3.94-1.764-3.94-3.94V31.082   c0-2.176,1.764-3.94,3.94-3.94h8.915c2.176,0,3.94,1.764,3.94,3.94v37.799C72.049,71.057,70.285,72.821,68.109,72.821z" style="fill:none;stroke:#000000;stroke-miterlimit:10;"/></g></svg>
+   </button>
+  <button class="flex justify-center items-center h-4/6 w-11/12 md:w-6/12 lg:w-4/12 hover:scale-90 hover:text-sky-950" id="next">
+      <!--next-->
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <!-- Created with Inkscape (http://www.inkscape.org/) -->
+      <svg
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:cc="http://creativecommons.org/ns#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+         width="32"
+         height="32"
+         viewBox="0 0 5.8208332 5.8208335"
+         version="1.1"
+         id="svg8"
+         inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+         sodipodi:docname="go-next.svg">
+        <defs
+           id="defs2" />
+        <sodipodi:namedview>
+           id="base"
+           pagecolor="#ffffff"
+           bordercolor="#666666"
+           borderopacity="1.0"
+           inkscape:pageopacity="0.0"
+           inkscape:pageshadow="2"
+           inkscape:zoom="8"
+           inkscape:cx="17.486803"
+           inkscape:cy="2.7831783"
+           inkscape:document-units="mm"
+           inkscape:current-layer="layer1"
+           showgrid="true"
+           units="px"
+           inkscape:window-width="1360"
+           inkscape:window-height="718"
+           inkscape:window-x="0"
+           inkscape:window-y="24"
+           inkscape:window-maximized="1">
+          <inkscape:grid
+             type="xygrid"
+             id="grid10" />
+        </sodipodi:namedview>
+        <metadata
+           id="metadata5">
+          <rdf:RDF>
+            <cc:Work
+               rdf:about="">
+              <dc:format>image/svg+xml</dc:format>
+              <dc:type
+                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              <dc:title></dc:title>
+            </cc:Work>
+          </rdf:RDF>
+        </metadata>
+        <g
+           inkscape:label="Capa 1"
+           inkscape:groupmode="layer"
+           id="layer1"
+           transform="translate(0,-291.17915)">
+          <g
+             id="g856"
+             transform="matrix(-1,0,0,1,5.9389926,0)">
+            <path
+               sodipodi:nodetypes="ccc"
+               inkscape:connector-curvature="0"
+               id="path12"
+               d="m 2.9104167,292.23748 -2.11666671,1.85209 2.11666661,2.11666"
+               style="fill:none;stroke:#1d4ec1;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+            <path
+               style="fill:none;stroke:#e94a4a;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.52147241"
+               d="M 5.2916667,292.23748 3.175,294.08957 l 2.1166666,2.11666"
+               id="path822"
+               inkscape:connector-curvature="0"
+               sodipodi:nodetypes="ccc" />
+          </g>
+        </g>
+      </svg>            
+  </button>
+  
+        <button id="musicVolumeBtn" class="max-sm:hidden mx-auto mt-2 w-5"><img class="w-5/6" src="https://cdn-icons-png.flaticon.com/128/786/786474.png?ga=GA1.2.1331612356.1692520256" alt="aa"></button>
     </div>
   
   <!-- Progressm -->
@@ -356,18 +359,17 @@
        <span id="duration" class="float-right font-serif font-medium"></span>
     </div>
   </div>
-  <button id="musicVolumeBtn" class="btn btn-info mx-auto mt-2" type="button">wheel</button>
-    <button id="backToSelcetBoxBtn" class="hidden w-full rounded-b-lg rounded-t-sm px-2 bg-opacity-20 bg-red-600 mx-auto  hover:bg-opacity-60">Back to the select box</button>
+    <button id="backToSelcetBoxBtn" class="hidden w-full rounded-b-lg rounded-t-sm px-2 bg-opacity-20 bg-red-600 mx-auto mt-3  hover:bg-opacity-60">Back to the select box</button>
 
   </main>
 
-  <div id="toast" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="toast" class="position-fixed bottom-0 end-0 p-3 max-sm:w-64 max-sm:mb-3 max-sm:mr-3" style="z-index: 11">
     <div id="liveToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header h-12" id="toast-header">
       
       </div>
       <div class="toast-body">
-        please use mouse wheel to control music volume!
+        please holding mouse on the volume icon and use mouse wheel to control music volume!
       </div>
     </div>
   </div>

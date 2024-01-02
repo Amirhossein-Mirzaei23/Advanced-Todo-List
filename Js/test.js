@@ -560,7 +560,7 @@ toastHeader.style.cssText=`
 background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-tropical-leaves-background_52683-61842.jpg?w=740&t=st=1703829926~exp=1703830526~hmac=2d4c904168c12148fb243aab5616b596f2deb22361359aed5c88c1bcd140f02d');
 background-size: 350px;
 filter: blur(0.2px);
-background-position: bottom;
+background-position: center;
 background-repeat:no-repeat;`
 /// create a function to control volume taost by clicking on the volume btn
 volumeBtn.addEventListener("click",function(){
@@ -578,7 +578,7 @@ toast.style.opacity = 1
         /////clear setInterval
         clearInterval(myInterval)
       }}, 19);
-}, 1000);
+}, 4000);
 
 
 })
@@ -633,15 +633,17 @@ const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 /////hide and show the music list and playlist box
 function hidemusiclist(){
   if (selectPlayListBox.classList.contains("hidden")) {
-    
+
     selectPlayListBox.classList.remove("hidden")
     musiclistElem.classList.add("hidden")
     backToMusicBoxBtn.classList.add("hidden")
+
   } else {
-   
+ 
     selectPlayListBox.classList.add("hidden")
     musiclistElem.classList.remove("hidden")  
     backToMusicBoxBtn.classList.remove("hidden")
+
   }
 }
 ///// set hide and show Element function to the musiclist and tthe olay list box
