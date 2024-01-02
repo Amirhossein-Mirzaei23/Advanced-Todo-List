@@ -1,9 +1,10 @@
+
 //window.addEventListener("load",()=>{
 // // alert("for add a new note to every category plz select your category at the first step").toUpperCase()
 // // alert("by single Double click on each item ,item will be deleted")
-//  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
-//  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
-//  alert(`And Welcome 🥳`)
+  alert(`Hi ,this is an under development Todolist project which add a few feather such as music palyer and calender part to be more user friendly and practical`)
+  alert(`calendar and reminder part is incomplete yet, many feather such as tutorial ,reminder,daily motivaion,dragable remove will add as soon as posible`)
+  alert(`And Welcome 🥳`)
 //})
 ////////////////////  Add and make Catgory part (variable and function)
 const body=document.querySelector("body")
@@ -34,7 +35,7 @@ let notelistContainer=document.getElementById("notelist-container")
 /////////////////////chnage theme function and array
 
 // array of some gif url
-animatedBackground=[
+const animatedBackground=[
   "https://clipart-library.com/img/1922221.gif",
   "https://steamuserimages-a.akamaihd.net/ugc/930428699254557419/35CEA61D2D82605E50BBA4B88EDAFC3AF40AA808/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
   "https://steamuserimages-a.akamaihd.net/ugc/930428699254558429/F2D4AB337B68015813EF032DD188C985CAB50A72/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
@@ -351,7 +352,7 @@ if(index>RGBColor.length){
 //////////////////////////////////////////play and load song (variable ,data and function)
 //////////////////////////////////////////// music playlist
 let musiclist=document.getElementById("musiclist")
-const songs = [
+const pop=[
   {
     path:
       "music/rain.mp3",
@@ -471,44 +472,10 @@ id:16
 },
 
 ];
-let house =[
-{ path:"https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3",
-displayName: "mandoline",
-artist: "otnicka",
-time:"03:20",
-id:1
-},
-{ path:"https://dl2.hitseda.com/Music/ak/nab-selections/Ghostly%20Kisses%20-%20Roses.mp3",
-displayName: "Roses",
-artist: " Ghostly Kisses",
-time:"03:28",
-id:2
-},
-{ path:"https://dl2.hitseda.com/Music/ak/insta-music/Jah%20Khalib%20-%20Leyla.mp3",
-displayName: "Leylal",
-artist: "Jah Khalìb",
-time:"04:06",
-id:3
-},
-{ path:"https://dl2.hitseda.com/Music/ak/insta-music/JONY-Love-your-voice.mp3",
-displayName: "Love your voice",
-artist: "JOHNY",
-time:"02:30",
-id:4
-},
-{ path:"",
-displayName: "",
-artist: "",
-time:"3:20",
-id:5
-},
-{ path:"",
-displayName: "",
-artist: "",
-time:"3:20",
-id:6
-},
-]
+
+
+
+const songs = pop
 const user=(name,artist,time)=>{
 this.songname=name
 this.artist=artist
@@ -550,7 +517,7 @@ let pauseSvg=document.getElementById("pauseSvg")
 let audio=document.querySelector("audio")
 let volumeBtn=document.getElementById("musicVolumeBtn")
 let isPlaying=false
-audio.volume=0.1
+
 let songIndex=0;
 let musiclistElem=document.getElementById("music-listElem")
 //////////////// create a function for music Volume
@@ -568,7 +535,7 @@ volumeBtn.addEventListener("click",function(){
 toast.classList.contains("show")? toast.className="toast hide" : toast.className="toast show";
 toast.style.opacity = 1
 ///// create a setInterval to fade out toast
- setTimeout(() => {
+const toastTimeOut= setTimeout(() => {
     const myInterval= setInterval(function() {
       if (toast.style.opacity > 0) {
         toast.style.opacity -= 0.01
@@ -577,17 +544,35 @@ toast.style.opacity = 1
         toast.className="toast hide";
         /////clear setInterval
         clearInterval(myInterval)
+        clearTimeout(toastTimeOut)
       }}, 19);
-}, 4000);
+}, 7000);
 
 
 })
 volumeBtn.addEventListener("wheel",(event)=>{
 ////
-audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("v");;
+audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("volume");;
 if(audio.volume<=0.01) audio.volume=0.02
 if(audio.volume>=0.99) audio.volume=0.98
-console.log(audio.volume);
+volumeBtn.childNodes[0].innerHTML=Math.floor((audio.volume)*100)
+// const volumeTimeOut= setTimeout(function() {
+//   volumeBtn.childNodes[0].innerHTML=""
+//   volumeBtn.childNodes[0].classList.remove("animation-fade-out")
+//   clearTimeout(volumeTimeOut)
+// }, 2000);
+
+volumeBtn.addEventListener("mouseenter",function(){
+
+  volumeBtn.childNodes[0].classList.remove("animation-fade-out","hidden")
+})
+volumeBtn.addEventListener("mouseleave",function(){
+  volumeBtn.childNodes[0].classList.add("animation-fade-out")
+  setTimeout(() => {
+    volumeBtn.childNodes[0].classList.add("hidden")
+  }, 1100);
+})
+
 })
 ////music part repansive constrol
 menuBtn.addEventListener("click",function(){
@@ -766,7 +751,6 @@ loadSong(songs[songIndex]);
       }else{
           play()
       }
-      console.log(audioBtn.pause)
       })
 
     // ProgressBar
@@ -924,7 +908,7 @@ modalNoteInput.addEventListener("keyup",function(){
 })
 
 }
-function showmodal(event){
+function showModal(event){
  let note= localStorage.getItem(`${event.target.id}`)
  modalNoteInput.value=note
 
@@ -942,7 +926,7 @@ let liElem=""
       liElem +=
           `<li class="opacity-30">${monthlastdate - i + 1}</li>`;
   }
-
+  let calenderdayli=null
   // Loop to add the dates of the current month
   for (let i = 1; i <= lastDate; i++) {
 
@@ -952,8 +936,12 @@ let liElem=""
           && year === new Date().getFullYear()
           ? "px-1 rounded-sm bg-gray-400 bg-opacity-60 text-red-950 cursor-pointer"
           : "w-8 py-1 text-center rounded-xl hover:bg-slate-200 cursor-pointer";
-       liElem += `<li data-bs-toggle="modal" data-bs-target="#exampleModal" id="calendarDay${months[month]} ${i}" onclick="modal(event)" onmouseenter="showmodal(event)" class="${isToday}">${i}</li>`;
+
+       liElem += `<li data-bs-toggle="modal" data-bs-target="#exampleModal" id="calendarDay${months[month]} ${i}" onclick="modal(event)" onmouseenter="showModal(event)"  class="${isToday}">${i}</li>`;
+
   }
+
+
 
   // Loop to add the first dates of the next month but as empty li Elem
   for (let i = dayend; i < 6; i++) {

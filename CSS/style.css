@@ -10,6 +10,7 @@ body {
     background-size:cover;
     background-position:center;
     background-attachment: fixed;
+    
 }
 .bg-catgory-container-t1{
     background-color: #BEADFA;
@@ -44,7 +45,18 @@ background-color: #F99417;
     padding: 0;
     font-family: 'Poppins', sans-serif;
   }
-  
+  .animation-fade-out{
+    animation: fade 1s linear 200ms infinite;
+  }
+  .animation-fade-in{
+    animation: fade 1s linear 0s 1 reverse;
+  }
+  .animation-go-in{
+    animation: goIn 2s linear 10ms 1;
+  }
+  .animation-back-in{
+    animation: backIn 2s linear 100ms 1;
+  }
 @keyframes fade {
   0%{
 opacity: 100%;

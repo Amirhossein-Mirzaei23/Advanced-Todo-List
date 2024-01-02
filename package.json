@@ -1,0 +1,14 @@
+{
+  "name": "advanced-todo-list",
+  "version": "1.0.0",
+  "description": "accsess Link:https://amirhossein-mirzaei23.github.io/Advanced-Todo-List/",
+  "type": "module",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
