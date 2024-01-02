@@ -562,19 +562,32 @@ background-size: 350px;
 filter: blur(0.2px);
 background-position: bottom;
 background-repeat:no-repeat;`
-
+/// create a function to control volume taost by clicking on the volume btn
 volumeBtn.addEventListener("click",function(){
+  ///
 toast.classList.contains("show")? toast.className="toast hide" : toast.className="toast show";
-setInterval(function() {
-  toast.parentElement.style.opacity+= -0.05
+toast.style.opacity = 1
+///// create a setInterval to fade out toast
+ setTimeout(() => {
+    const myInterval= setInterval(function() {
+      if (toast.style.opacity > 0) {
+        toast.style.opacity -= 0.01
+      } else {
+        //set hide class to the toast again
+        toast.className="toast hide";
+        /////clear setInterval
+        clearInterval(myInterval)
+      }}, 19);
 }, 1000);
+
+
 })
 volumeBtn.addEventListener("wheel",(event)=>{
-
+////
 audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("v");;
 if(audio.volume<=0.01) audio.volume=0.02
 if(audio.volume>=0.99) audio.volume=0.98
-
+console.log(audio.volume);
 })
 ////music part repansive constrol
 menuBtn.addEventListener("click",function(){
@@ -588,8 +601,6 @@ menuBtn.addEventListener("click",function(){
 
     function fadeIn(){
       musicContainer.style.opacity+=-0.1
-      console.log( musicContainer.style.opacity);
-      console.log("a");
     }
   }
 })
