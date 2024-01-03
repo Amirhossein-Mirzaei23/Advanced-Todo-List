@@ -38,23 +38,31 @@ let notelistContainer=document.getElementById("notelist-container")
 const animatedBackground=[
   "https://clipart-library.com/img/1922221.gif",
   "https://steamuserimages-a.akamaihd.net/ugc/930428699254557419/35CEA61D2D82605E50BBA4B88EDAFC3AF40AA808/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+  "",
   "https://steamuserimages-a.akamaihd.net/ugc/930428699254558429/F2D4AB337B68015813EF032DD188C985CAB50A72/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
   "https://wallpaperaccess.com/full/9142379.gif",
   "https://clipart-library.com/img/1922157.gif",
   "https://usagif.com/wp-content/uploads/rainy-21.gif",
   
 ]
+///////create a function to change document background
+let bgnumber=0
+
+function changeTheme(){
+  if (bgnumber<animatedBackground.length) {
+    bgnumber++
+  } else {
+    bgnumber=0
+  }
+    body.style.cssText=` background-image:url(${animatedBackground[bgnumber]});`
+    console.log(animatedBackground[bgnumber]);
+  }
 //// a add event listener on change theme btn to change doc background 
 //   which use animated background array to set new url
-let bgnumber=0
-changethemeBtn.addEventListener("click",function(){
-if (bgnumber<animatedBackground.length) {
-  bgnumber++
-} else {
-  bgnumber=0
-}
-  body.style.cssText=` background-image:url(${animatedBackground[bgnumber]});`
-})
+
+changeTheme()
+
+changethemeBtn.addEventListener("click",changeTheme)
 /// a func to fade out and fade in all item in document wich use some key frame of css file
  hideItemBtn.addEventListener("click",hideAll)
 function hideAll(){
