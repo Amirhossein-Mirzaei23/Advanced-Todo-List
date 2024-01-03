@@ -479,17 +479,25 @@ time:"02:30",
 id:16
 },
 
+{ path:"https://ts1.tarafdari.com/contents/user308486/content-sound/pink_floyd_-_wish_you_were_here.mp3",
+displayName: "Wish uou were here",
+artist: "Pink floyd",
+time:"05:40",
+id:17
+},
+{ path:"https://ts15.tarafdari.com/contents/user763128/content-sound/10_-_riders_on_the_storm.mp3",
+displayName: "Rider on the storm",
+artist: "The Doors",
+time:"07:15",
+id:18
+},
+
 ];
 
 
-
+/////
 const songs = pop
-const user=(name,artist,time)=>{
-this.songname=name
-this.artist=artist
 
-
-}
 //// a methods to create music playlist in music contianer part 
 songs.forEach(object=>{
 
@@ -682,10 +690,10 @@ function loadSong(song) {
      }
      let songOnPlay=document.getElementById(song.id)
      songOnPlay.classList.add("bg-opacity-40")
-   //  songOnPlay.appendChild()
+   
     })
   }
-  ///song information dispaly
+  
 // Previous Song
 function prevSong() {
     songIndex--;
