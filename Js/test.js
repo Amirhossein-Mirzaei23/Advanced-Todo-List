@@ -511,7 +511,7 @@ songs.forEach(object=>{
   </li>`)
 })
 
- //////////////variables 
+ //////////////variables  of music progress bar and audio
 
 const currentTimeEl = document.getElementById("current-time");
 
@@ -566,18 +566,15 @@ const toastTimeOut= setTimeout(() => {
 
 
 })
+/////create a function to contro song volume with miuse wheel
 volumeBtn.addEventListener("wheel",(event)=>{
 ////
 audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("volume");;
 if(audio.volume<=0.01) audio.volume=0.02
 if(audio.volume>=0.99) audio.volume=0.98
 volumeBtn.childNodes[0].innerHTML=Math.floor((audio.volume)*100)
-// const volumeTimeOut= setTimeout(function() {
-//   volumeBtn.childNodes[0].innerHTML=""
-//   volumeBtn.childNodes[0].classList.remove("animation-fade-out")
-//   clearTimeout(volumeTimeOut)
-// }, 2000);
 
+//////set a fade animation to show and hide volume number
 volumeBtn.addEventListener("mouseenter",function(){
 
   volumeBtn.childNodes[0].classList.remove("animation-fade-out","hidden")
