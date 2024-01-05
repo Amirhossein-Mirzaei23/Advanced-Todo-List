@@ -649,22 +649,21 @@ let backToMusicBoxBtn=document.getElementById("backToSelcetBoxBtn")
 
 backToMusicBoxBtn.addEventListener("click",hidemusiclist)
 selectPlayListBox.addEventListener("click",hidemusiclist)
-///////////////create show icon function for seelct playslist box
+///////////////create show icon function
 function setIcon(event){
   let childElem=event.target.childNodes[0]
   childElem.childNodes[0].data=""
- //event.target.childNodes[1].data="" 
 
  childElem.childNodes[1].classList.remove("hidden")
 }
+///// create a function to show text in music play list box when mouse leave
 function setText(event){
   let childElem=event.target.childNodes[0]
   childElem.childNodes[0].data=`${childElem.id}`
- //event.target.childNodes[1].data="" 
 
  childElem.childNodes[1].classList.add("hidden")
 }
-////////////////////set show and hide Icon funcion to all childern of selecct box 
+////////////////////set two setText() and SetIcon funcion to all  music playlist btn 
 function setAddEventListener(){
 selectPlayListBox.childNodes.forEach((child)=>{
   if (child.tagName=="DIV") {
