@@ -360,7 +360,7 @@ if(index>RGBColor.length){
 //////////////////////////////////////////play and load song (variable ,data and function)
 //////////////////////////////////////////// music playlist
 let musiclist=document.getElementById("musiclist")
-const pop=[
+const Pop=[
   {
     path:
       "music/rain.mp3",
@@ -493,24 +493,53 @@ id:18
 },
 
 ];
+const Rock=[
+
+  {path:
+  "music/rain.mp3",
+displayName: "Html Padcast",
+artist: "Ozbi",
+id:1,
+time:"06:32"
+},
+
+]
+const House=[
+  { path:"https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3",
+  displayName: "mandoline",
+  artist: "otnicka",
+  time:"03:20",
+  id:1
+  },
+
+]
+let plaListName=Pop
+/////define a variable to set evety a song playlist wich match with selec music tbutton
+let songs = plaListName
+const plaList=[Pop,Rock,House]
 
 
-/////
-const songs = pop
+//// a function to create music playlist in music contianer part 
+function createSongPlayList(){
+  console.log(plaListName)
+  
+  console.log(songs);
+  musiclist.innerHTML=""
 
-//// a methods to create music playlist in music contianer part 
-songs.forEach(object=>{
+  songs.forEach(object=>{
 
-  musiclist.insertAdjacentHTML("beforeend",` <li id=${object.id} class="mt-1 w-full h-10 bg-orange-400  grid grid-cols-2 px-2 rounded-xl hover:scale-105 hover:-py-1">
-            
-  <div class="flex items-center">${object.time}</div>
-  <div class="px-1">
-     <h1 class=" font-serif text-sm overflow-hidden whitespace-nowrap">${object.displayName}</h1>
-     <h4 class="float-right font-serif text-xs overflow-hidden whitespace-nowrap">${object.artist}</h4>
-  </div>
-  </li>`)
-})
+    musiclist.insertAdjacentHTML("beforeend",` <li id=${object.id} class="mt-1 w-full h-10 bg-orange-400  grid grid-cols-2 px-2 rounded-xl hover:scale-105 hover:-py-1">
+              
+    <div class="flex items-center">${object.time}</div>
+    <div class="px-1">
+       <h1 class=" font-serif text-sm overflow-hidden whitespace-nowrap">${object.displayName}</h1>
+       <h4 class="float-right font-serif text-xs overflow-hidden whitespace-nowrap">${object.artist}</h4>
+    </div>
+    </li>`)
+  })
 
+}
+createSongPlayList()
  //////////////variables  of music progress bar and audio
 
 const currentTimeEl = document.getElementById("current-time");
@@ -629,7 +658,7 @@ const housePlaylistIcon=document.getElementById("housePlaylistIcon")
 const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
 const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 /////hide and show the music list and playlist box
-let plaListName
+
 function hidemusiclist(event){
  
 ///create a two condition to redefine the playlist variable if its clicked on playlist buttons
@@ -641,6 +670,34 @@ function hidemusiclist(event){
     plaListName=event.target.parentElement.id
     console.log(plaListName);
   }  
+
+ // plaList.forEach((muscitype)=>{
+ //   console.log(muscitype);
+ //   if(muscitype==plaListName){
+ //     console.log("mathed");
+ //     songs = plaListName
+ //   }
+ // })
+//for (const musictype in plaList) {
+//  if(musictype==plaListName){
+//
+//        console.log("mathed");
+//        console.log(musictype);
+//       songs = musictype
+//      }
+//  
+//}
+// //    for (let index = 0; index < plaList.length; index++) {
+//       const element = plaList[index];
+//       console.log(element);
+// //   if(element==plaListName){
+//       console.log("mathed");
+//       songs = element
+// //     }
+//      
+// //    }
+  createSongPlayList()
+  
 
 //// create if and else to hide and show selectbox and music playlist when its clicked on select play list box
    if (selectPlayListBox.classList.contains("hidden")) {
@@ -656,6 +713,8 @@ function hidemusiclist(event){
      backToMusicBoxBtn.classList.remove("hidden")
  
    }
+
+  
 }
 
 ///// set hide and show Element function to the musiclist and tthe olay list box
