@@ -629,21 +629,35 @@ const housePlaylistIcon=document.getElementById("housePlaylistIcon")
 const classicPlaylistIcon=document.getElementById("classicPlaylistIcon")
 const chillPlaylistIcon=document.getElementById("chillPlaylistIcon")
 /////hide and show the music list and playlist box
-function hidemusiclist(){
-  if (selectPlayListBox.classList.contains("hidden")) {
-
-    selectPlayListBox.classList.remove("hidden")
-    musiclistElem.classList.add("hidden")
-    backToMusicBoxBtn.classList.add("hidden")
-
-  } else {
+let plaListName
+function hidemusiclist(event){
  
-    selectPlayListBox.classList.add("hidden")
-    musiclistElem.classList.remove("hidden")  
-    backToMusicBoxBtn.classList.remove("hidden")
-
+///create a two condition to redefine the playlist variable if its clicked on playlist buttons
+  if(event.target.tagName.toLowerCase() === "div"){ 
+    plaListName=event.target.id
+    console.log(plaListName);
   }
+  if(event.target.tagName.toLowerCase() === "img"){ 
+    plaListName=event.target.parentElement.id
+    console.log(plaListName);
+  }  
+
+//// create if and else to hide and show selectbox and music playlist when its clicked on select play list box
+   if (selectPlayListBox.classList.contains("hidden")) {
+ 
+     selectPlayListBox.classList.remove("hidden")
+     musiclistElem.classList.add("hidden")
+     backToMusicBoxBtn.classList.add("hidden")
+ 
+   } else {
+  
+     selectPlayListBox.classList.add("hidden")
+     musiclistElem.classList.remove("hidden")  
+     backToMusicBoxBtn.classList.remove("hidden")
+ 
+   }
 }
+
 ///// set hide and show Element function to the musiclist and tthe olay list box
 let backToMusicBoxBtn=document.getElementById("backToSelcetBoxBtn")
 
