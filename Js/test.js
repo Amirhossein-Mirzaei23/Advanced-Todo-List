@@ -894,11 +894,12 @@ let bg=[
   ,["bg-gradient-to-r","from-blue-100","via-purple-300","to-blue-500"]
   ,["bg-gradient-to-r","from-red-400","via-purple-300","to-blue-500"]
 ]
+// create a variable  to control the color of progressbar  gradiant background
  let bgIndex=1
 /// set a interval to chnage progressbar gradiant background 
 setInterval(function(){
   bgIndex++
-  
+  /// create a condition to ignore false index
   if (bgIndex>=bg.length) {
     bgIndex=1
   }
