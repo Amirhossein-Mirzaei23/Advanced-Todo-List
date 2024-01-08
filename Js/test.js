@@ -921,7 +921,7 @@ setInterval(function(){
       
 },1600)
     
-///////////////////////////////////////////////calender and reminder part
+///////////////////////////calender and reminder part
 /////////////////////////////////////reminder code will add in the future
 let date = new Date();
 let year = date.getFullYear();
@@ -931,7 +931,7 @@ const day = document.getElementById("calendar-dates");
 const currdate = document.getElementById("calendar-current-date");
 const prenexIcons = document.getElementById("calendar-navigation");
  
-
+///create an array todefine month of calender
 const months = [
     "January",
     "February",
