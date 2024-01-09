@@ -595,7 +595,7 @@ const toastTimeOut= setTimeout(() => {
 
 
 })
-/////create a function to contro song volume with miuse wheel
+/////create a function to control song volume with mouse wheel
 volumeBtn.addEventListener("wheel",(event)=>{
 ////
 audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("volume");;
