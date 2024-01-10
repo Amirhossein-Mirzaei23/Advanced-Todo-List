@@ -513,6 +513,7 @@ const House=[
   },
 
 ]
+/////// define a variable to create song playlist by type
 let plaListName=Pop
 /////define a variable to set evety a song playlist wich match with selec music tbutton
 let songs = plaListName
@@ -521,9 +522,7 @@ const plaList=[Pop,Rock,House]
 
 //// a function to create music playlist in music contianer part 
 function createSongPlayList(){
-  console.log(plaListName)
-  
-  console.log(songs);
+
   musiclist.innerHTML=""
 
   songs.forEach(object=>{
@@ -597,13 +596,13 @@ const toastTimeOut= setTimeout(() => {
 })
 /////create a function to control song volume with mouse wheel
 volumeBtn.addEventListener("wheel",(event)=>{
-////
+////create a two condition to control the range of audio volume
 audio.volume>0.01 && audio.volume <=0.99 ? audio.volume+=Math.round(event.deltaY*-0.01)*0.01 :console.log("volume");;
 if(audio.volume<=0.01) audio.volume=0.02
 if(audio.volume>=0.99) audio.volume=0.98
 volumeBtn.childNodes[0].innerHTML=Math.floor((audio.volume)*100)
 
-//////set a fade animation to show and hide volume number
+//////set a fade animation which show and hide volume number
 volumeBtn.addEventListener("mouseenter",function(){
 
   volumeBtn.childNodes[0].classList.remove("animation-fade-out","hidden")
