@@ -352,13 +352,11 @@ function changeColor(item){
 index++
 if(index>RGBColor.length){
     index=0
-}
-}
+}}
 
+//////////////// play and load song (variable ,data and function)
+////////////// music playlist
 
-
-//////////////////////////////////////////play and load song (variable ,data and function)
-//////////////////////////////////////////// music playlist
 let musiclist=document.getElementById("musiclist")
 const Pop=[
   {
@@ -493,6 +491,7 @@ id:18
 },
 
 ];
+
 const Rock=[
 
   {path:
@@ -504,6 +503,7 @@ time:"06:32"
 },
 
 ]
+
 const House=[
   { path:"https://dl2.hitseda.com/Music/ak/nab-selections/Otnicka%20-%20Mandoline.mp3",
   displayName: "mandoline",
@@ -513,8 +513,11 @@ const House=[
   },
 
 ]
+
 /////// define a variable to create song playlist by type
+
 let plaListName=Pop
+
 /////define a variable to set evety a song playlist wich match with selec music tbutton
 let songs = plaListName
 const plaList=[Pop,Rock,House]
