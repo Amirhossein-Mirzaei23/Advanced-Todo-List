@@ -635,7 +635,7 @@ menuBtn.addEventListener("click",function(){
 })
 
 const selectPlayListBox=document.getElementById("selectplaylistbox")
-//////////soundbox Icon
+////////// create some variable for soundbox Icon
 const rockIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/rock-n-roll-hand.png" alt="Rock Icon"/>`
 const popIcon=`<img class="hidden w-8 mx-auto mt-1 hover:scale-110" src="https://www.shareicon.net/data/128x128/2016/07/04/790994_multimedia_512x512.png" alt="Pop Icon"/>`
 const rapIcon=`<img class="hidden w-12 mx-auto -translate-y-3 rotate-12 hover:scale-110" src="https://freesvg.org/img/microphone_in_fist.png" alt="Rap Icon"/>`
