@@ -785,6 +785,7 @@ function prevSong() {
 
     play();
   }
+  /// a function to play audio and chnge play/pause icon
 function play(){
     isPlaying=true
     audio.play()
@@ -792,6 +793,7 @@ function play(){
     pauseSvg.classList.remove("hidden")
     playBtn.setAttribute("title", "Pause");
 }
+////a function to pause audio and chnge play/pause icon
 function pause(){
     isPlaying=false
     playingSvg.classList.remove("hidden")
@@ -813,6 +815,7 @@ function selectsongfromplaylist(e){
   })
 
 }
+//// set selectSongfromPlaylist function to musiclist
 musiclistElem.addEventListener("click",selectsongfromplaylist)
 // On Load - Select First Song
 loadSong(songs[songIndex]);
@@ -831,7 +834,7 @@ loadSong(songs[songIndex]);
 
     progress.style.backgroundColor="cadetblue"
 
-
+//// set pause and play function to the playing btn
     audioBtn.addEventListener("click",function(){
       if(isPlaying){
           pause()
