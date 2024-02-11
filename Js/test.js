@@ -358,6 +358,15 @@ if(index>RGBColor.length){
 ////////////// music playlist
 
 let musiclist=document.getElementById("musiclist")
+///// music fetch data Api
+const apiUrl=`https://api.genius.com/web_pages/lookup?canonical_url=http://example.com`
+const data= fetch(apiUrl).then(res=>{
+  console.log(res.json());
+  return res.json()
+}).catch(()=>{
+  console.log("eror");
+})
+
 const Pop=[
   {
     path:
